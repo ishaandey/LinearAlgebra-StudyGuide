@@ -1,0 +1,389 @@
+# Linear Algebra Notes 
+
+### Ishaan Dey | Spring 2020
+##### MATH 3350 | Holt Linear Algebra 2nd Ed.
+
+$$
+\renewcommand{\vec}[1]{\mathbf{#1}}
+$$
+
+## Ch 1
+
+### 1.2 Intro stuff
+
+<u>Thm</u>: Any system of linear eqs has either 0, exactly 1, or $\infty$ many solutions
+
+<u>How to</u>: check how many solutions there are in a given system of eq:
+	If there last line is $0=c$, then there is $no\ solution$
+	If not, are there free variables? If so, there are $inf\ many\ solutions$, otherwise $1\ solution$.
+
+<u>Thm:</u> Homogenous systems ALWAYS are consistent, aka they have either 1 or inf many solutions.
+This is b/c the trivial solution will always exist when $A\vec{x} = 0$
+
+
+
+## Ch 2
+
+### 2.1 Linear Combinations
+
+<u>How to:</u> find all vectors $\begin{pmatrix}a\\b\end{pmatrix}$ s.t. $c_1u_1+c_2u_2=$$\begin{pmatrix}a\\b\end{pmatrix}$ ?
+\> Augment the vector with $\begin{pmatrix}a\\b\end{pmatrix}$ and row reduce, the remaining things in the augment become the scalars $c_1 , c_2$ 
+
+<u>How to</u>: show that a certain vector $\vec{b}$ cannot be obtained as a linear combination of some other vectors?
+\> Augment the matrix with b then row reduce, you'll find an inconsistent set with $0=c$
+
+### 2.2 Spans 
+
+<u>Definition</u> of $span\{\vec{u_1...u_m}\} $ is the set of ALL linear combinations 
+
+<u>How to</u>: See if some vector $\vec{v}$ is an element of $span\{u_1, u_2, ..., u_m\}$?
+\> iff the linear system w/  $\vec{v}$ as the augment has a solution
+
+<u>Thm</u>: IF $\vec{u, v}$ are in $span\{\vec{u_1...u_m}\}$, THEN   $\vec{u+v}$  &  $a\vec{u}$  are in that span 
+(linear combinations of the vectors are in that span)
+
+<u>How to:</u> Find a vector $\vec{b}$ not in a given span of vectors?
+\> Set matrix equal (by augment) to some (a, b, c), and track what happens to it until matrix is row reduced.
+\> If the row is [ 0 0 0 | f(c) ], then any vector that has f(c) $\neq$ 0 is not in the span
+
+<u>Thm:</u> ($span\{u_1...u_m\} = \mathbb{R} ^n$) $\iff$ (*B has a <u>pivot</u> in every <u>row</u>*)
+
+<u>How to:</u> check if a set of vectors span $\mathbb{R}^n$?
+\> Row reduce the matrix augmented with $[a\ b\ c]$
+	\> Check if there is a row of 0s, which would imply that there could be a vector not in that span 
+	\> If there is a pivot in every row, there are either 1 or inf many ways to get to any point in $\mathbb{R} ^n$ (depending on if there are free variables in any of the columns)
+
+<u>How to</u>: Find what values of $h$ in a $n$ x $m$ matrix allow it to span $\mathbb{R} ^n$ ?
+	a. Row reduce the matrix, moving the $h$ down as needed to the last row.
+	b. The vectors in A span $\mathbb{R} ^n$ iff there is a trivial solution, which only occurs when $f(h) \neq 0$
+	c. The final answer should be all vectors with $\{h|h\neq27\}$ or something
+
+<u>How to:</u> find $span(\vec{\{a_1...a_m}\})$ (aka the columns of T)?
+
+<u>Thm:</u> For a given set of *m* vectors in  $\vec{R}^n$:
+	a. IF $m < n$, THEN  the set does <u>not</u> span $\vec{R}^n$ (b/c theres no way to have a pivot in every row)
+	b. IF $m\geq n$, THEN the set could span $\vec{R}^n$ (depends on whether or not they are linearly independent)
+
+<u>Thm</u>:   $\vec{b}\ \epsilon\ span\{\vec{a_1...a_m}\}\ in\ \mathbb{R}^n$ $\iff$$A\vec{x}\ = \vec{b} $ has at least 1 solution
+
+### 2.3 Linear Independence
+
+<u>Definition</u>: IF the only way to express $\vec{0}$ as a linear combination of $\vec{A}$ is the trivial solution $\vec{0}$, THEN the system is *linearly independent*. Nontrivial solutions imply *linear dependence*.
+<u>Thm</u>:   ($\vec{Ax=0}$ has only the trivial solution) $\iff$ ( $\{\vec{a_1...a_m}\}$ is linearly independent )
+
+<u>How to:</u> Check if a system is linearly independent?
+	a. Set the sytem equal to $\vec{0}$, and row reduce. The only solution should be $\vec{x} = \vec{0}$ (which will happen when there is a pivot in every column)
+
+<u>Thm:</u>  (*m* vectors in  $\vec{R}^n$ are linearly independent) $\implies$ ($m\leq n$)
+	(b/c you can't have pivots in every column if there are too many columns)
+	(in other words, there are more variables than equations in the system)
+
+<u>Thm:</u> For a given set of *m* vectors in  $\mathbb{R}^n$:
+	a.   ( $span\{u_1...u_m\} = \mathbb{R}^n$ ) $\iff$ (*B has a pivot in every <u>row</u>*)
+	b.  ( $\{u_1...u_m\}$ are linearly independent ) $\iff$ (*B has a pivot in every <u>column</u>*)
+
+<u>How to:</u> Check if one vector lies in the span of others in a set?
+	a. Row reduce the matrix augmented with $\vec{0}$
+	b. If B does not have a pivot in every column $\implies$ the system is linearly dependent $\implies$ one of the vectors lies in the span of the others
+
+###### General vs. Particular Solutions to Ax=0
+
+<u>Thm</u>: $\vec{x_g = x_p + x_h}$, where $\vec{x_g}$ is the solution to $\vec{Ax=b}$, $\vec{x_h}$ is the solution to the associated homogenous system $\vec{Ax=0}$, and $\vec{x_p}$ is a particular solution to $\vec{x_g}$
+
+<u>Thm:</u> For a given set of vectors $\{\vec{a_1...a_m}\}$ and $\vec{b}$ in  $\mathbb{R}^n$:
+	a.  ( $\{\vec{a_1...a_m}\}$ are linearly independent) $\iff$ ($\vec{Ax=b} $)
+
+## Ch 3
+
+### 3.1 Linear Transformations
+
+<u>Definition</u>: A transformation $T\vec{(x)=Ax}$ is <u>linear</u> if both:
+	a. $T\vec{(u+v)=A(u+v)\ \ =\ \ A(u)+A(v)=T(u)+T(v)}$
+	b. $T\vec{(}r\vec{u)=A(}r\vec{u)\ \ =}$  $r\vec{A(u)}=rT(\vec{u})$
+
+<u>Thm</u>: $T\vec{(x)=Ax}$ $\implies$ $T$ is a linear transformation, where $A$ is a $n x m$ matrix, and T goes from $\vec{R^m}$ to $\vec{R^n}$ 
+
+<u>How to</u>: Check if a given transformation is linear:
+	a. Convert the system into a matrix A
+	b. Plug in the vectors $\begin{pmatrix}x_1\\x_2\end{pmatrix}$ for $\vec{u}$ and $\begin{pmatrix}y_1\\y_2\end{pmatrix}$ for $\vec{v}$  to prove the general case *true*
+	c. Try the basis vectors $\begin{pmatrix}1\\0\end{pmatrix}$ and $\begin{pmatrix}0\\1\end{pmatrix}$ independently and check if the output fails to prove *false*
+
+<u>How to</u>: Find $range(T)$, where $\vec{T(x)=Ax}$  :
+	a. $range(T) = span(\{\vec{a_1...a_m}\})$ 
+	b. range is the set of linear combinations of the columns of A
+
+<u>How to:</u> Check if a given vector $\vec{w}$ is in $range(\vec{T})$:
+	a. Make matrix of $\vec{[A\ |w]}$ and solve
+
+###### One-to-One vs Onto
+
+<u>Definition</u>: A transformation is *one-to-one* when there's at most one input that maps to an output
+<u>Definition</u>: A transformation is *onto* when no element in the codomain B is left out
+
+<u>Thm</u>: Given $T: \mathbb{R} ^m \rightarrow \mathbb{R} ^n$ and  $T\vec{(x)=Ax}$, where $\vec{B}$ is A in row-echelon form:
+	1a. (T is one-to-one) $\iff$ (columns of A are linearly *in*dependent) $\iff$ (B has a pivot in every column)
+	1b. $n < m \implies$ T is not one-to-one (aka if output space is smaller than input space)
+
+​	2a. (T is onto) $\iff$ (columns of A span the codomain $\mathbb{R}^n$ aka $range(T)=\mathbb{R}^n$) $\iff$ (B has a pivot in every row)
+​	2b. $n > m \implies$ T is not onto (aka if output space is bigger than input space)
+
+​	\> "No matrix that goes from bigger space to smaller space can be one-to-one"
+​	\> "No matrix that goes from small space to bigger space can be onto"
+
+###### Geometry of transformations
+
+<u>How to</u>: Rotate a vector CCW by $\theta$ :
+	a. $T_r(\vec{x}) = \begin{pmatrix}cos(\theta)&-sin(\theta)\\sin(\theta)&cos(\theta)\end{pmatrix} \vec{x}$
+
+<u>How to</u>: Shear to the right:
+	a.  $T_r(\vec{x}) = \begin{pmatrix}1&1\\0&1\end{pmatrix} \vec{x}$
+
+### 3.2 Matrix Algebra
+
+###### Properties of Elementary Matrices
+
+a. $A(BC)=(AB)C$
+b. $A(B+C) = AB+AC$
+c. $(A+B)C = AC+BC$
+d. $s(AB) = (sA)B = A(sB)$
+e. $AI = IA = A$
+
+###### Non-Properties of Nonzero Matrices 
+
+a. It is possible that $AB \neq BA$
+b. $AB=0$ does not imply that $A=0$ and $B=0$
+c. $AC = BC$ does not imply that $A=B$ or $C=0$ (unless $A$ is invertible)
+
+###### Transpose of a Matrix 
+
+a. $(A+B)^T = A^T + B^T$
+b. $(sA)^T = sA^T$
+c. $(AC)^T = C^T A^T$
+
+##### 3.3 Inverses
+
+<u>Definition</u>: If T is a linear transformation, Then
+	a. $T$ has an inverse $\implies$  $m=n$ 
+	b. If $T$ is invertible, then $T^{-1}$ is also a linear transformation
+
+($T$ is invertible) $\iff$ ($T$ is one-to-one AND onto)
+
+<u>How to:</u> find an invertible matrix $A^{-1}$?
+	a. Augment matrix A with $I_n$ , then row reduce until you get  $I_n$ augmented with $A^{-1}$ 
+	(aka $[A|I_n]\rightarrow[I_n|A^{-1}]$ )
+
+<u>Thm:</u> Elementary matrices are invertible
+
+###### Properties of Inverses
+
+​	a. $(A^{-1})^{-1} = A$ 
+​	b. $(AB)^{-1} = B^{-1}A^{-1}$ 
+​	c. $AC=AD \implies C=D$
+​	d. $AC=0_{nm} \implies C=0_{nm}$
+
+## Ch 4
+
+### 4.1 Subspaces
+
+<u>Definition</u>: A subset of S is a subspace if all three conditions are true:
+	a. S contains $\vec{0}$   (S contains the origin)
+	b. If $\vec{u}$ and $\vec{v}$ are both in S, then $\vec{(u+v)}$ is in S (S is closed under addition)
+	c. If $r\ \epsilon\ \mathbb{R}$ , then $r\vec{u}$ is also in S (S is closed under scalar multiplication)
+
+<u>Thm</u>: If S = $span\{\vec{u_1...u_m}\}$ in $\mathbb{R}^n$, then S is a subspace of $\mathbb{R}^n$
+
+<u>How to:</u> Check if S is a subspace?
+	a. Check if $\vec{0}$ is in S, which it must be to be a subspace
+	b. Try to show S is generated by a set of vectors (See if it can be composed as a matrix of coefficients)
+
+<u>Definition</u>: If $\vec{A}$ is a $n$ *x* $m$ matrix, then the set of solutions to $\vec{Ax=0}$ is called $null(\vec{A})$ 
+	(aka the null space is all linear combinations where $\vec{Ax=0}$)
+	(aka the null space is the solution to the homogenous system)
+
+<u>Thm</u>: If $\vec{A}$ is a $n$ *x* $m$ matrix, then the set of solutions to $\vec{Ax=0}$ forms a subspace of $\mathbb{R}^m$ 
+	(aka null space is a subspace)
+
+<u>Thm</u>: Given $T:\ \mathbb{R}^m\ \rightarrow\ \mathbb{R}^n$ is a *linear* transformation:
+	a. $ker({T})$ is a subspace of the domain $\mathbb{R}^m$
+	b. $range({T})$ is a subspace of the codomain $\mathbb{R}^n$ 
+
+\> "The kernel is the set of vectors that are sent to {$\vec{0}$} after applying $T$"
+\> "The range of T is the span after applying $T$"
+
+<u>How to</u>: Find $ker(T)$ of $T(\vec{x}) = A(\vec{x})$?
+	a. $(T\vec{(x)=Ax}) \implies$ ( $ker(T) = null(A)$ ), so solve for $\vec{Ax=0}$, and $ker(T)$ is the span of that answer
+<u>How to</u>: Find $range(T)$ of $T(\vec{x}) = A(\vec{x})$?
+	a. $range(T) = span(\vec{a_1...a_m})$, so just delete any linearly *dependent* columns of $\vec{A}$ and that's your answer
+
+<u>Thm</u>: (T is one-to-one) $\iff$ ( $ker(T) = \{\vec{0}\}$ )       
+
+### 4.2 Basis vectors
+
+<u>Definition</u>: Set *B* $= \vec{\{u_1...u_m\}}$ is a *basis* of subspace S iff:
+	a. *B* spans S
+	b. *B* is linearly independent
+"To get to any point in S, you can take a linear combination of the basis vectors to get there"
+
+<u>How to</u>: find a basis for S = span$\vec{\{u_1...u_m\}}$? 
+*Method 1 (Thm 4.10):*
+	a. Create a matrix $\begin{pmatrix}\vec{u_1\\...\\u_m}\end{pmatrix} $
+	b. Row reduce to B
+	c. The nonzero *rows* of B give a basis of S
+*Method 2 (Thm 4.11):*
+	a. Create a matrix out of $\vec{\{u_1...u_m\}}$
+	b. Row reduce to B. The pivot columns of B are linearly independent 
+		(the other cols  are dependent on the pivot columns)
+	c. The *columns of A​* corresponding to the *pivot columns of B* form a basis of S. 
+
+###### Dimension
+
+<u>Thm</u>: If *S* is a subspace of $\mathbb{R} ^n$, then every basis of *S* has the same number of vectors
+
+<u>Definition</u>: If *S* is a subspace of $\mathbb{R} ^n$, then the *dimension* of *S* is the number of vectors in any basis of *S*
+
+<u>Thm</u>: Let *U* = $\vec{\{u_1...u_m\}}$ is a set of $m$ vectors in subspace S of dimension $m$. 
+		IF U is *either* linearly independent or spans S, THEN U is a basis for S.
+
+<u>How to</u>: expand a set of vectors to become a basis of $\R^n$:
+	a. Append on all the unit vectors of $\R$ ,  $\vec{e_i}$  ,  that you have and then row reduce down to B. 
+	b. The original columns of A that correspond w/ the pivots of B become the basis vectors for $\R^n$
+
+<u>Unifying Theorem</u>: Given *S* = $\vec\{{a_1 ... a_m}\}, \vec\{{a_1 ... a_m}\} \epsilon \mathbb{R} ^n, A =[\vec{a_1 ... a_m}]$, and $T: \mathbb{R} ^m \rightarrow \mathbb{R} ^n, T(\vec{x}) = A\vec{x}$:
+	a. *S* spans $\mathbb{R}^n$
+	b. S is linearly independent
+	c. $A\vec{x} = \vec{b}$ has precisely 1 unique solution $\forall\ b\ \epsilon\ \mathbb{R}^n$ 
+	d. $T$ is onto
+	e. $T$ is one-to-one
+	f. $A$ is invertible
+	g. $ker\{T\}=\{\vec{0}\} \iff null(A)=\{\vec{0}\}$
+	h. *S* is a basis of $\mathbb{R}^n$ 
+
+### Ch 4.3 Row and Column Spaces
+
+<u>Definition</u>: Row vectors of A come from viewing A as a set of rows; Column vectors of A come from viewing A as a set of columns.
+
+<u>Definition</u>: Given $A$ is a $n$ x $m$ matrix:
+	a. $row(A)$ or row space is the subspace of $\mathbb{R^m}$ spanned by *row vectors* of $A$
+	b. $col(A)$ or column space is the subspace of $\mathbb{R^n}$ spanned by *column* vectors of $A$
+
+<u>Thm</u>: Given matrix $A$ and $B$ in echelon form:
+	a. Nonzero rows of $B$ form a basis for $row(A)$
+	(The redundant rows get killed off by row reduction)
+	b. The cols of $A$ corresponding to pivot columns of $B$ form a basis for $col(A)$
+	(The pivot columns are linearly independent  $\implies$  they form the column space of A)
+
+<u>Thm</u>: For any matrix A, the dimension of $row(A)$ equals the dimension of $col(A)$
+(aka the number of basis vectors needed to define $row(A)$ the number needed to define $col(A)$)
+
+<u>Definition</u>: $rank(A)$ is the dimension of $row(A)$ or $col(A)$
+
+<u>Rank-Nullity Thm</u>: IF $A$ is a $n$ x $m$ matrix, THEN $rank(A) + nullity(A) = m$ (# of cols)
+( $nullity(A)$ is the number of free variables in the system $A\vec{x}=0$ )
+*Note: $ker(T) $ is $ null(A), $ and $ range(T)$ is $col(A)$
+
+<u>Thm</u>: IF $A$ is a $n$ x $m$ matrix, and $\vec{b}$ is a vector in $\mathbb{R^n}$:
+	a. The system $A\vec{x}=\vec{b}$ is consistent $\iff$ $\vec{b}$ is in $col(A)$
+	b. The system $A\vec{x}=\vec{b}$ has a unique solution  $\iff$ $\vec{b}$ is in $col(A) $ *and* columns of A are linearly independent
+
+<u>Unifying Theorem</u>: Given *S* = $\vec\{{a_1 ... a_m}\}, \vec\{{a_1 ... a_m}\} \epsilon \mathbb{R} ^n, A =[\vec{a_1 ... a_m}]$, and $T: \mathbb{R} ^m \rightarrow \mathbb{R} ^n, T(\vec{x}) = A\vec{x}$:
+	a. *S* spans $\mathbb{R}^n$
+	b. S is linearly independent
+	c. $A\vec{x} = \vec{b}$ has precisely 1 unique solution $\forall\ b\ \epsilon\ \mathbb{R}^n$ 
+	d. $T$ is onto
+	e. $T$ is one-to-one
+	f. $A$ is invertible
+	g. $ker\{T\}=\{\vec{0}\} \iff null(A)=\{\vec{0}\}$
+	h. *S* is a basis of $\mathbb{R}^n$ 
+	i. $col(A)$ = $\mathbb{R^n}$
+	j. $col(A)$ = $\mathbb{R^n}$
+	k. $rank(A) = n$
+
+### Ch 4.4 Change of Basis
+
+<u>Definition</u>: Suppose that $B$  = $\{\vec{u_1 ... u_n}\}$ forms a basis of $\mathbb{R^n}$, and if $\vec{y}=y_1\vec{u_1}+...+y_n\vec{u_n}$:
+	THEN: The *coordinate vector* of $y$ w.r.t. *B* is $[\vec{y}]_B = \begin{pmatrix}y_1\\...\\y_n\end{pmatrix}$
+	"the coordinate vector contains the coeffs required to express y as a linear combination of vectors in basis B"
+
+​	$	U\begin{pmatrix}y_1\\...\\y_n\end{pmatrix} = y_1\vec{u_1}+...+y_n\vec{u_n}$
+​	
+​	$\vec{y}=U[\vec{y}]_B$ ; where $U$ is the *change of basis matrix* that transforms the coordinate vector wrt $B$ back to the standard basis
+​	($U$ is just the $n$ x $n$ matrix containing the basis vectors of set B: $[\vec{u_1 ... u_n}]$ )
+
+<u>Thm</u>: Let $\vec{x}$ be expressed wrt standard basis, and *B*  = $\{\vec{u_1 ... u_n}\}$ be any basis for $\mathbb{R^n}$:
+	If $U$ = $[\vec{u_1 ... u_n}]$, then: $\vec{x}=U[\vec{x}]_B$ and $[\vec{x}]_B = U^{-1}\vec{x}$ 
+	"$U$ takes us from a vector described in weird basis land into our standard definition"
+	"$U^{-1}$ tells us how to define a vector w/ standard definition into weird basis land"
+
+<u>How to:</u> Move from one nonstandard basis to another?
+If $B_1$ = $\{\vec{u_1 ... u_n}\}$ corresponds to U and $B_2$ = $\{\vec{v_1 ... v_n}\}$ corresponds to V, then:
+	$[\vec{x}]_{B_2} = V^{-1}U[\vec{x}]_{B_1}$
+	$[\vec{x}]_{B_1} = U^{-1}V[\vec{x}]_{B_2}$
+
+\> "To go from basis 1 to basis 2, apply $U$ to go into standard basis, then apply  $V^{-1}$ to go to basis 2 land"
+
+INSERT PIC
+
+## Ch 5
+
+### Ch 5.1 Determinant
+
+<u>Definition:</u> Given A is a $nxn$ matrix, each position is defined as $a_{ij}$:
+	a. cofactor  $C_{ij} = (-1)^{i+j}*det(M_{ij})$, where $M_{ij}$  is the rest of the matrix that doesn't include the $i$th row & $j$th column
+	b. $det(A)=a_{11}C_{ij}+...+a_{1n}C_{1n}$ :  for each element in the *first* column, multiply each times its cofactor. 
+	c. In general, you can expand down any row or column and apply the same formula (<u>Thm 5.8</u>)
+
+<u>Matrix of signs</u>: $ \begin{pmatrix} +  -  +  - \\ -  +  -  + \\  +  -  +  - \\  -  +  -  + \\ \end{pmatrix} $
+
+<u>Thm 5.5:</u> $det(I_n)=1$
+
+<u>Thm 5.6:</u> $A$ is invertible $\iff$ $det(A) \neq 0$ 
+	\> This would invoke unifying theorem, so you could say things like: "cols of A form a basis of $\R^{n}$ " etc.
+
+<u>Thm 5.9</u>: If $A$ is triangular matrix, then $det(A)$ is product of terms along the diagonal
+
+<u>Thm 5.11:</u> If $A$ is a square matrix, then:
+	a. If $A$ has a row or column of zeros, then $det(A)=0$
+	b. If $A$ has two identical rows or columns, then $det(A)=0$
+
+### Ch 5.2 Properties of Determiniants
+
+<u>Thm 5.13</u>: 
+	a. Swap 2 rows of A $\implies$ $-det(A)$
+	b. Multiply row of A by $c$ $\implies$ $c*det(A)$
+	c. Add multiple of one row of A to another $\implies$ $det(A)$
+
+<u>Thm 5.10:</u> If $A$ is a square matrix, then $det(A^T) = det(A)$
+
+<u>Thm 5.12:</u> $\det(AB)=det(A)det(B)$ if $A$ and $B$ are both $n$ x $n$ matrices
+
+### Ch 5.3 Applications of Determinants
+
+<u>Cramer's Rule (Thm 5.17):</u> Let $A$ be invertible; to find unique solution, $\vec{x}$, to $A\vec{x}=\vec{b}$:
+	 $\vec{x}_i=\frac{det(A_i)}{det(A)}$, where $A_i$ is the matrix $A$ but with the $i$th column replaced by $\vec{b}$
+
+<u>How To:</u> Find the unique solution to $A\vec{x}={b}$ :
+	\> Apply Cramer's Rule for each column in $A$
+
+<u>Thm 5.18:</u> If $A$ is invertible, then:
+	$A^{-1}=adj(A)/det(A)$, where $\text{adj}(A)=C^T$, the transpose of the cofactor matrix of $A$
+
+<u>Thm</u>: $A(\text{adj}(A)=\det(A)*I_n)$
+
+<u>Thm 5.20:</u> Let *D* be a region w finite area in $\vec{R}^2$, $T(\vec{x})=A\vec{x}$, and $T(D)$ is the image of *D* under $T$, then:
+	$\text{area}(T(D)) = |\text{det}(A)|*\text{area}(D)$
+
+<u>Thm 5.21:</u> Same thing as Thm 5.20 but w/ $\text{volume}$ in $\vec{R}^3$ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
