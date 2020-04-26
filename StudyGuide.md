@@ -374,6 +374,46 @@ INSERT PIC
 
 <u>Thm 5.21:</u> Same thing as Thm 5.20 but w/ $\text{volume}$ in $\vec{R}^3$ 
 
+## Ch 6
+
+### Ch 6.1 Eigenvalues and Eigenvectors
+
+<u>Definition:</u> Let $A$ be a $n$ x $n$ matrix; $\vec{u}$ is an eigen*vector* of $A$ if there exists a scalar $\lambda$ s.t. 
+			$A\vec{u}=\lambda\vec{u}$ ; where $\lambda$ is an eigen*value* of $A$
+	\> <u>Intuition</u>: If $A$ is a transofrmation that changes the basis vectors of our subspace, 
+		then we expect most vectors to also be transformed.
+		Eigen*vectors* are the specific vectors that remain parallel after the transformation, 
+		and the degree to which its scaled is called the eigen*value*
+
+<u>Thm 6.2:</u> If $\vec{u}$ is an eigenvector of $A$ associated with $\lambda $, then $c\vec{u}$ is also associated w/ $\lambda$
+
+<u>How to:</u> Find an eigenvector if you know the eigenvalues for a given $n$x$n$ matrix $A$:
+	For a specific eigenvector, say  $\lambda =6$:  $(A\vec{u}-6I_{n})\vec{u}=\vec{0}$
+		a. Subtract off $6$ from each value along the *diagonal* of $A$
+		b. Then set equal to $\vec{0}$ and solve out
+		c. You'll get something like $s_1 \begin{bmatrix}-2\\-1\\0\end{bmatrix} + s_2 \begin{bmatrix}1\\0\\1\end{bmatrix}$, which means any vector $\vec{u}$ that is a linear combination of the
+			those two is an eigenvector (this is called the eigenspace btw)
+
+<u>Thm 6.3:</u> If $A$ is a $n$x$n$ matrix w/ eigenvalue $\lambda$, and $S$ is the set of all eigenvectors associated w/ $\lambda$, including $\vec{0}$ :
+		Then $S$ is a subspace of $\vec{R}^n$
+
+<u>Definition:</u> Eigenspace of $A$ is the subspace of all eigenvectors associated w/ $\lambda$  together w/ $\vec{0}$
+
+<u>Thm 6.5:</u>  $\lambda$ is an eigenvalue of $A$ $\iff$ $det(A-\lambda I_n)=0$
+
+<u>How to:</u> find eigenvalues of $A$:
+	a. Subtract off $\lambda $ from each diagonal, and take the determinant of that matrix
+			\> The result is called the characteristic polynomial btw
+	b. Set that equal to 0, and solve for lambda
+
+<u>Definition:</u> Multiplicity is the number of times a root of the characteristic equation is repeated, aka equal to its factor's exponent
+
+<u>Thm 6.6:</u> Let $A$ be a square matrix w/ eigenvalue $\lambda$: Then $\text{dim}$ of associated eigenspace is $\leq$ multiplicity of $\lambda$
+
+<u>Thm 6.7</u>: Unifying thm, if $det(A) \neq 0$, then $\lambda $ is not an eigenvalue of $A$
+
+### Ch 6.2 Diagonalization
+
 
 
 
