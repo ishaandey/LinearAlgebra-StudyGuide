@@ -32,7 +32,7 @@ This is b/c the trivial solution will always exist when $A\vec{x} = 0$
 <u>How to</u>: show that a certain vector $\vec{b}$ cannot be obtained as a linear combination of some other vectors?
 \> Augment the matrix with b then row reduce, you'll find an inconsistent set with $0=c$
 
-### 2.2 Spans 
+### 2.2 Span
 
 <u>Definition</u> of $span\{\vec{u_1...u_m}\} $ is the set of ALL linear combinations 
 
@@ -413,6 +413,11 @@ INSERT PIC
 <u>Thm 6.7</u>: Unifying thm, if $det(A) \neq 0$, then $\lambda $ is not an eigenvalue of $A$
 
 ### Ch 6.2 Diagonalization
+
+<u>Definition</u>: $A$ is diagonalizable if there exists $n$x$n$ matrices $D$ and $P$, s.t. $D$ is diagonal and $P$ is invertible:
+						=>	$A=PDP^{-1}$
+
+<u>Thm 6.9:</u> $A$ is diagonalizable $\iff$ $A$ has eigenvectors that form a basis for $\vec{R}^n$: 
 
 
 
