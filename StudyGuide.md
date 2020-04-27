@@ -402,28 +402,43 @@ INSERT PIC
 <u>Thm 6.5:</u>  $\lambda$ is an eigenvalue of $A$ $\iff$ $det(A-\lambda I_n)=0$
 
 <u>How to:</u> find eigenvalues of $A$:
-	a. Subtract off $\lambda $ from each diagonal, and take the determinant of that matrix
+		a. Subtract off $\lambda $ from each diagonal, and take the determinant of that matrix
 			\> The result is called the characteristic polynomial btw
-	b. Set that equal to 0, and solve for lambda
+		b. Set that equal to 0, and solve for lambda
 
 <u>Definition:</u> Multiplicity is the number of times a root of the characteristic equation is repeated, aka equal to its factor's exponent
 
 <u>Thm 6.6:</u> Let $A$ be a square matrix w/ eigenvalue $\lambda$: Then $\text{dim}$ of associated eigenspace is $\leq$ multiplicity of $\lambda$
 
-<u>Thm 6.7</u>: Unifying thm, if $det(A) \neq 0$, then $\lambda $ is not an eigenvalue of $A$
+<u>Thm 6.7</u>: Unifying thm: $\lambda=0$ is not an eigenvalue of $A$
+		In other words, if $\lambda$ $=0$ *is* an eigenvalue of $A$, then one of the columns is linearly dependent or something
 
 ### Ch 6.2 Diagonalization
 
 <u>Definition</u>: $A$ is diagonalizable if there exists $n$x$n$ matrices $D$ and $P$, s.t. $D$ is diagonal and $P$ is invertible:
 						=>	$A=PDP^{-1}$
 
-<u>Thm 6.9:</u> $A$ is diagonalizable $\iff$ $A$ has eigenvectors that form a basis for $\vec{R}^n$: 
+<u>How to:</u> Find $P$ and $D$ to diagonalize matrix $A$:
+		a. Find each eigenvalue using $det(A-\lambda I_n)=0$
+		b. Find the associateed eigenvector by solving the homogenous system $(A-I_n)\vec{u}=\vec{0}$
+		c. $P=[\vec{u}_1, \vec{u}_2 , ..., \vec{u}_n]$ ;  $D = \begin{bmatrix} \lambda_1\text{    }0 \\ 0 \text{    } \lambda_2 \end{bmatrix} $ 
 
+<u>Thm 6.9:</u> $A$ is diagonalizable $\iff$ $A$ has eigenvectors that form a basis for $\vec{R}^n$ 
+		$\iff$ $A$ has $n$ linearly *independent* eigenvectors
 
+<u>Thm 6.10:</u> If $\{ \lambda_1,...,\lambda_k \} $ are distinct eigenvalues of $A$, 
+				 then any set of associated eigenvectors $\{ \vec{u_1},...,\vec{u}_k \}$ are *linearly independent* 
+		\> Means that vectors from *distinct* eigenspaces are linearly independent
 
+​		\> This also means that $A$ can be not invertible and yet diagonalizable
 
+<u>Thm 6.11:</u> If $A$ has only real eigenvalues, then:
+			$A$ is diagonalizable $\iff$ $\text{dim}$ of each eigenspace *equals* the multiplicity of corresponding eigenvalue
+		\> Means that you'll know that a matrix isn't diagonalizable (for example) when you see that there's one basis vector of an eigenspace when the root had a higher power
 
+<u>Thm 6.12:</u> If $A$ is a $n$ x $n$ matrix with $n$ *distinct* real eigenvalues, then $A$ is diagonalizable
 
+<u>How to</u>: Get $k$th power of matrix:   $A^k=PD^{k}P^{-1}$
 
 
 
