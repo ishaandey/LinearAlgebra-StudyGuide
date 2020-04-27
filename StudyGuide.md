@@ -496,6 +496,8 @@ INSERT PIC
 
 <u>Definition:</u> $\mathbb{P}^n$ is the set of all polynomials of degree $\leq n$
 		a. Standard bases: $\{1,x,x^2,...,x^n\} \implies dim(\mathbb{P}^n=n+1)$
+		b. $\text{dim } \mathbb{P} = \infin$, enough to show that there is no finite basis
+			b1. $\mathbb{P} \subset C(\R) \implies \text{dim } C(\R) = \infin$
 
 <u>How to</u>: check if a given set of polynomials, i.e. $\{x+1,x^2-1,x^2+x+1\}$, is a basis of $\mathbb{P}^2$?
 		a. Check linear independence: Assign a scalar $c_i$ to each polynomial; each column represents $c_i$, and each element in each *column* corresponds to a different degree of that polynomial, i.e. $x^2$
@@ -504,9 +506,9 @@ INSERT PIC
 			$\implies \begin{pmatrix} 1\ -1\ 1 \\ 1 \ 0 \ 1 \\ 0 \ 1 \ 1 \end{pmatrix} \begin{pmatrix}c_1\\c_2\\c_3\end{pmatrix} = \begin{pmatrix}0\\0\\0\end{pmatrix}$
 			a1. Check that determinant $\neq 0$ which would imply unique trivial solution, which implies linear independence
 		b. Could also check that they $\text{span} \mathbb{P}^2$
-		$\implies \begin{pmatrix} 1\ -1\ 1 \\ 1 \ 0 \ 1 \\ 0 \ 1 \ 1 \end{pmatrix} \begin{pmatrix}c_1\\c_2\\c_3\end{pmatrix} = \begin{pmatrix}a\\b\\c\end{pmatrix}$
+			$\implies \begin{pmatrix} 1\ -1\ 1 \\ 1 \ 0 \ 1 \\ 0 \ 1 \ 1 \end{pmatrix} \begin{pmatrix}c_1\\c_2\\c_3\end{pmatrix} = \begin{pmatrix}a\\b\\c\end{pmatrix}$
 		c. Could also check matrix of derivatives: if there exists at least a single value of $x$ that makes $det(A) \neq 0$, $\implies$ linear indpendence.
-			\begin{vmatrix} x+1\ x^2-1\ x^2+x+1 \\ 1 \ 2x \ 2x+1 \\ 0 \ 2 \ 2 \end{vmatrix}
+			$\begin{vmatrix} x+1& x^2-1 & x^2+x+1 \\ 1 & 2x & 2x+1 \\ 0 & 2 & 2 \end{vmatrix}$
 
 ### 7.3 Basis and Dimension
 
@@ -530,6 +532,14 @@ INSERT PIC
 
 <u>Thm 7.17:</u> Let $\mathcal{V}$ = $\{ \vec{v}_1, ..., \vec{v}_m \}$ be a subset of $V$ with $\text{dim}(V)=m$.
 		a. If $\mathcal{V}$ is linearly independent *or* spans $V$, then $\mathcal{V}$ is a basis for $V$
+
+<u>How to:</u> find $dim \text{ span}\{T_1,T_2,T_3\}$, given something like $T_1\vec{x}=\begin{pmatrix}x_1 + x_2 \\ 2x_1 \end{pmatrix}$, etc.?
+		a. Check linear independence of $T_1, T_2, T_3$ (Must hold $\forall\ x$ )
+			a1. Assign each $T_i$ a scalar $c_i$ which become its own columns; 
+				each element in that matrix has its own row on that particular column
+			b. Row reduce: if you get a free variable in a certain column, say $s_1$, then that column is a linear comination of the others
+		b. Check how many $T$s are needed to maintain linear independence, that is $dim \text{span}$
+
 
 ## Ch 8
 
@@ -558,7 +568,6 @@ INSERT PIC
 <u>Triangle Inequality Thm 8.8</u> 	$|\vec{u} + \vec{v}| \leq ||\vec{u}||+||\vec{v}||$
 
 
-
 <u>Definition:</u> Vector $\vec{u}$ is orthogonal to subspace $S$ if $\vec{u}\sdot\vec{v}=0$ for every vector $\vec{s}$ in $S$. The set of all such vectors $ \vec{u}$ is called the orthogonal complement of $S$ and is denoted by $S^\bot$
 
 <u>Thm 8.10:</u> If $S$ is a subspace of $\vec{R}^n$, then so is $S^\bot$
@@ -571,15 +580,3 @@ INSERT PIC
 		b. Because $A\vec{u}=\begin{bmatrix} \vec{s}_1\sdot\vec{u} \\  \vec{s}_2\sdot\vec{u} \end{bmatrix}$, $\vec{u}$ is in $S^\bot$ only when $A\vec{u} = \vec{0}$
 		c. Solve out $A\vec{u} = \vec{0}$, and find something like $\vec{u} = c_1\begin{bmatrix} 5 \\ 3 \\ 1 \end{bmatrix} + c_2\begin{bmatrix} -4 \\ 2 \\ 7 \end{bmatrix}$
 		d. $S^\bot = \text{span}\{\begin{bmatrix} 5 \\ 3 \\ 1 \end{bmatrix}, \begin{bmatrix} -4 \\ 2 \\ 7 \end{bmatrix}\}$
-
-
-
-​            
-
-
-
-
-
-
-
-
