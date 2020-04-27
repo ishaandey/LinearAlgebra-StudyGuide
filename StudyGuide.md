@@ -258,7 +258,7 @@ c. $(AC)^T = C^T A^T$
 	g. $ker\{T\}=\{\vec{0}\} \iff null(A)=\{\vec{0}\}$
 	h. *S* is a basis of $\mathbb{R}^n$ 
 
-### Ch 4.3 Row and Column Spaces
+### 4.3 Row and Column Spaces
 
 <u>Definition</u>: Row vectors of A come from viewing A as a set of rows; Column vectors of A come from viewing A as a set of columns.
 
@@ -298,7 +298,7 @@ c. $(AC)^T = C^T A^T$
 	j. $col(A)$ = $\mathbb{R^n}$
 	k. $rank(A) = n$
 
-### Ch 4.4 Change of Basis
+### 4.4 Change of Basis
 
 <u>Definition</u>: Suppose that $B$  = $\{\vec{u_1 ... u_n}\}$ forms a basis of $\mathbb{R^n}$, and if $\vec{y}=y_1\vec{u_1}+...+y_n\vec{u_n}$:
 	THEN: The *coordinate vector* of $y$ w.r.t. *B* is $[\vec{y}]_B = \begin{pmatrix}y_1\\...\\y_n\end{pmatrix}$
@@ -325,7 +325,7 @@ INSERT PIC
 
 ## Ch 5
 
-### Ch 5.1 Determinant
+### 5.1 Determinant
 
 <u>Definition:</u> Given A is a $nxn$ matrix, each position is defined as $a_{ij}$:
 	a. cofactor  $C_{ij} = (-1)^{i+j}*det(M_{ij})$, where $M_{ij}$  is the rest of the matrix that doesn't include the $i$th row & $j$th column
@@ -345,7 +345,7 @@ INSERT PIC
 	a. If $A$ has a row or column of zeros, then $det(A)=0$
 	b. If $A$ has two identical rows or columns, then $det(A)=0$
 
-### Ch 5.2 Properties of Determiniants
+### 5.2 Properties of Determiniants
 
 <u>Thm 5.13</u>: 
 	a. Swap 2 rows of A $\implies$ $-det(A)$
@@ -356,7 +356,7 @@ INSERT PIC
 
 <u>Thm 5.12:</u> $\det(AB)=det(A)det(B)$ if $A$ and $B$ are both $n$ x $n$ matrices
 
-### Ch 5.3 Applications of Determinants
+### 5.3 Applications of Determinants
 
 <u>Cramer's Rule (Thm 5.17):</u> Let $A$ be invertible; to find unique solution, $\vec{x}$, to $A\vec{x}=\vec{b}$:
 	 $\vec{x}_i=\frac{det(A_i)}{det(A)}$, where $A_i$ is the matrix $A$ but with the $i$th column replaced by $\vec{b}$
@@ -376,7 +376,7 @@ INSERT PIC
 
 ## Ch 6
 
-### Ch 6.1 Eigenvalues and Eigenvectors
+### 6.1 Eigenvalues and Eigenvectors
 
 <u>Definition:</u> Let $A$ be a $n$ x $n$ matrix; $\vec{u}$ is an eigen*vector* of $A$ if there exists a scalar $\lambda$ s.t. 
 			$A\vec{u}=\lambda\vec{u}$ ; where $\lambda$ is an eigen*value* of $A$
@@ -413,7 +413,7 @@ INSERT PIC
 <u>Thm 6.7</u>: Unifying thm: $\lambda=0$ is not an eigenvalue of $A$
 		In other words, if $\lambda$ $=0$ *is* an eigenvalue of $A$, then one of the columns is linearly dependent or something
 
-### Ch 6.2 Diagonalization
+### 6.2 Diagonalization
 
 <u>Definition</u>: $A$ is diagonalizable if there exists $n$x$n$ matrices $D$ and $P$, s.t. $D$ is diagonal and $P$ is invertible:
 						=>	$A=PDP^{-1}$
@@ -442,7 +442,7 @@ INSERT PIC
 
 ## Ch 7
 
-### Ch 7.1 Vector Spaces + Subspaces
+### 7.1 Vector Spaces + Subspaces
 
 <u>Definition</u>: Vector space is a set $V$ of vectors, together w/  operations of addition and scalar multiplication:
 		a. $V$ is closed under addition: 	If $\vec{v}_1$ and $\vec{v}_2$ are in $V$, then so is $\vec{v}_1+\vec{v}_2$
@@ -470,4 +470,5 @@ INSERT PIC
 		b. If $\vec{u}, \vec{v}$ is in $S$, then $\vec{u}+\vec{v}$ is also in $S$
 		c. If $c$ is a scalar and $\vec{v}$ is in $S$, then $c\vec{v}$ is also in $S$
 
- 
+### 7.2 Span and Linear Independence
+
