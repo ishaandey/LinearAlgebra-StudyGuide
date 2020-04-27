@@ -488,11 +488,24 @@ INSERT PIC
 
 <u>Definition:</u> $\mathcal{V}$ is a basis of $V$ if $\mathcal{V}$ is linearly independent *and* spans $V$
 
-<u>Thm 7.11</u> Set $\mathcal{V}$ = $\{ \vec{v}_1, \vec{v}_2, ..., \vec{v}_m \}$ is a basis of vector space $V$ iff:
+<u>Thm 7.11</u> Set $\mathcal{V}$ = $\{ \vec{v}_1, ..., \vec{v}_m \}$ is a basis of vector space $V$ iff:
 		$\{ \vec{v}_1, \vec{v}_2, ..., \vec{v}_m \}=\vec{v}$ has a *unique* solution for every $\vec{v}$ in $V$	
 
 <u>Thm 7.12</u> If $\mathcal{V_1}$ and $\mathcal{V_2}$ are both bases of vector space $V$, then $\mathcal{V_1}$ and $\mathcal{V_2}$ have the same number of elements
 <u>Definition</u> Dimension of $V$ is equal to the number of vectors in any basis of $V$. *It's possible for dimension to be infinte if the basis of $V$ is infinitely long*
+
+<u>Thm 7.14</u> Let $\mathcal{V}$ = $\{ \vec{v}_1, ..., \vec{v}_m \}$ be a subset of *nontrivial, finite, dimensional* vector space $V$:
+		a. If $\mathcal{V}$ spans $V$, then either $\mathcal{V}$ is a basis of $V$ or vectors can be removed from $\mathcal{V}$ to form a basis of $V$
+		b. If $\mathcal{V}$ is linearly independent, then either $\mathcal{V}$ is a basis of $V$ or vectors can be added to $\mathcal{V}$ to form a basis of $V$
+
+<u>Thm 7.15:</u> If $V_1$ is a subspace of $V_2$, then $\text{dim}(V_1) \leq \text{dim}(V_2)$
+
+<u>Thm 7.16:</u> Let $\mathcal{V}$ = $\{ \vec{v}_1, ..., \vec{v}_m \}$ be a subset of $V$ with $\text{dim}(V)=n$.
+		a. If $m<n$, then $\mathcal{V}$ does not span $V$
+		b. If $m>n$, then $\mathcal{V}$ is not linearly independent
+		
+<u>Thm 7.17:</u> Let $\mathcal{V}$ = $\{ \vec{v}_1, ..., \vec{v}_m \}$ be a subset of $V$ with $\text{dim}(V)=m$.
+		a. If $\mathcal{V}$ is linearly independent *or* spans $V$, then $\mathcal{V}$ is a basis for $V$
 
 
 
