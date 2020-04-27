@@ -421,7 +421,7 @@ INSERT PIC
 <u>How to:</u> Find $P$ and $D$ to diagonalize matrix $A$:
 		a. Find each eigenvalue using $det(A-\lambda I_n)=0$
 		b. Find the associateed eigenvector by solving the homogenous system $(A-I_n)\vec{u}=\vec{0}$
-		c. $P=[\vec{u}_1, \vec{u}_2 , ..., \vec{u}_n]$ ;  $D = \begin{bmatrix} \lambda_1\text{    }0 \\ 0 \text{    } \lambda_2 \end{bmatrix} $ 
+		c. $P=[\vec{u}_1, \vec{u}_2 , ..., \vec{u}_n]$ ;  $D = \begin{bmatrix} \lambda_1\ \ 0 \\ 0 \ \lambda_2 \end{bmatrix} $ 
 
 <u>Thm 6.9:</u> $A$ is diagonalizable $\iff$ $A$ has eigenvectors that form a basis for $\vec{R}^n$ 
 		$\iff$ $A$ has $n$ linearly *independent* eigenvectors
@@ -460,7 +460,7 @@ INSERT PIC
 <u>Thm 7.2:</u> Let $\vec{v}$ be in vector space $V$:
 		a. $\vec{0}$ is the zero vector in $V$ $\implies$ $\vec{v}+\vec{0}=\vec{v}$
 		b. $-\vec{v}$ is the additive inverse of $\vec{v}$ $\implies$ $-\vec{v}+\vec{v}=\vec{0}$
-		c. $\vec{v}$ has unique additive inverse $-\vec{v}$
+		c. $\vec{v}$ has a unique additive inverse $-\vec{v}$
 		d. Zero vector $\vec{0}$ is unique
         e. $0*\vec{v}=\vec{0}$
 		f. $(-1)*\vec{v}=-\vec{v}$
@@ -471,4 +471,28 @@ INSERT PIC
 		c. If $c$ is a scalar and $\vec{v}$ is in $S$, then $c\vec{v}$ is also in $S$
 
 ### 7.2 Span and Linear Independence
+
+<u>Definition:</u> Span of set $\{ \vec{v}_1, \vec{v}_2, ..., \vec{v}_m \}$ is set of all linear combinations of the form: $c_1\vec{v}_1+c_2\vec{v}_2+...+c_m\vec{v}_m$
+
+<u>Thm 7.6:</u> Suppose that $\mathcal{V}$ is a subset of vector space $V$, and let $S = \text{span}(\vec{\mathcal{V}})$ then $S$ is a subspace of $\mathcal{V}$
+
+<u>Definition:</u> Set $\mathcal{V}$ = $\{ \vec{v}_1, \vec{v}_2, ..., \vec{v}_m \}$ is linearly *in*dependent if $c_1\vec{v}_1+c_2\vec{v}_2+...+c_m\vec{v}_m = \vec{0}$ has only the trivial solution
+
+<u>Thm 7.8</u> Set $\mathcal{V}$ = $\{ \vec{v}_1, \vec{v}_2, ..., \vec{v}_m \}$ is linearly *de*pendent $\iff$ at least one vector is in the span of the others
+
+<u>Thm 7.9</u> If set $\mathcal{V}$ = $\{ \vec{v}_1, \vec{v}_2, ..., \vec{v}_m \}$ is a subset of $V$, then:
+		a. $\mathcal{V}$ is *linearly independent* $\iff$ $\{ \vec{v}_1, \vec{v}_2, ..., \vec{v}_m \}=\vec{v}$ has *at most* one solution for each $\vec{v}$ in $V$
+        b. $\mathcal{V}$ *spans* $V$ $\iff$ $\{ \vec{v}_1, \vec{v}_2, ..., \vec{v}_m \}=\vec{v}$ has *at least* one solution for each $\vec{v}$ in $V$
+
+### 7.3 Basis and Dimension
+
+<u>Definition:</u> $\mathcal{V}$ is a basis of $V$ if $\mathcal{V}$ is linearly independent *and* spans $V$
+
+<u>Thm 7.11</u> Set $\mathcal{V}$ = $\{ \vec{v}_1, \vec{v}_2, ..., \vec{v}_m \}$ is a basis of vector space $V$ iff:
+		$\{ \vec{v}_1, \vec{v}_2, ..., \vec{v}_m \}=\vec{v}$ has a *unique* solution for every $\vec{v}$ in $V$	
+
+<u>Thm 7.12</u> If $\mathcal{V_1}$ and $\mathcal{V_2}$ are both bases of vector space $V$, then $\mathcal{V_1}$ and $\mathcal{V_2}$ have the same number of elements
+<u>Definition</u> Dimension of $V$ is equal to the number of vectors in any basis of $V$. *It's possible for dimension to be infinte if the basis of $V$ is infinitely long*
+
+
 
