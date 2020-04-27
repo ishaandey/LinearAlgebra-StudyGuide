@@ -555,28 +555,56 @@ INSERT PIC
 		e. $ \vec{u}\sdot\vec{u}=0 \iff \vec{u}=\vec{0} $ 
 
 <u>Definition:</u> Norm or length of $ \vec{x} = ||\vec{x}|| = \sqrt{\vec{x}\sdot\vec{x}}$
+		$||c\vec{x}||=|c|\ ||\vec{x}||$
+
+<u>Definition:</u> Unit vector in direction of $\vec{x}$:
+		$||\frac{\vec{x}}{||\vec{x}||}|| = 1$ 
 
 <u>Definition:</u> The distance between $\vec{u}$ and $\vec{v}$ in $\vec{R}^n$ is $||\vec{u}-\vec{v}||$
 		a. Subtract $v_!$ from $u_1$, etc., then take the magnitude of that resulting vector
+		b. This is really the distance between the endpoints of the rays
 
 <u>Definition:</u> Vectors $\vec{u}$ and $\vec{v}$ in $\vec{R}^n$ are orthogonal if $\vec{u}\sdot\vec{v}=0$
 
 <u>Pythagorean Thm 8.6</u>:     $||\vec{u}+\vec{v}||^2=||\vec{u}||^2+||\vec{v}||^2 \iff \vec{u}\sdot\vec{v}=0$
+		a. Think middle school geometry: pythagorean thm applies iff right triangle 
 
 <u>Cauchy-Schwarz Inequality Thm 8.7:</u> 	 $|\vec{u}\sdot\vec{v}| \leq ||\vec{u}||\text{ }||\vec{v}||$
+		a. Define $cos(\theta)=\frac{\vec{u}\sdot\vec{v}}{||\vec{u}||\text{ }||\vec{v}||}$
 
 <u>Triangle Inequality Thm 8.8</u> 	$|\vec{u} + \vec{v}| \leq ||\vec{u}||+||\vec{v}||$
+		a. This says that the line segment between two vectors is the shortest way between those two points 
 
+######  Orthogonal Subspaces
 
-<u>Definition:</u> Vector $\vec{u}$ is orthogonal to subspace $S$ if $\vec{u}\sdot\vec{v}=0$ for every vector $\vec{s}$ in $S$. The set of all such vectors $ \vec{u}$ is called the orthogonal complement of $S$ and is denoted by $S^\bot$
+<u>Definition:</u> Vector $\vec{u}$ is orthogonal to subspace $S$ if $\vec{u}\sdot\vec{v}=0\ \forall \ \vec{s} \in S$. The set of all such vectors $ \vec{u}$ is called the orthogonal complement of $S$ and is denoted by $S^\bot$
+			$S^\bot=\{\vec{u}\ \in\ \R^n\ |\  \vec{u}\sdot\vec{s}=0\ \forall\ \vec{s} \in S$
 
-<u>Thm 8.10:</u> If $S$ is a subspace of $\vec{R}^n$, then so is $S^\bot$
+<u>Thm 8.10:</u> $S$ ~ subspace of $\R^n$ $\implies$ $S^\bot$ ~ subspace of $\R^n$ 
 
 <u>Thm 8.11:</u> Let $\mathcal{V} = \{ \vec{s}_1, ..., \vec{s}_k \}$ be a basis for subspace $S$ and $\vec{u}$ be a vector. 
-					Then $ \vec{u}\sdot\vec{s}_1=0,  \vec{u}\sdot\vec{s}_2 = 0, ...,  \vec{u}\sdot\vec{s}_k=0 \iff \vec{u}$ is in $S^\bot$
+					Then $ \vec{u}\sdot\vec{s}_1=0,  \vec{u}\sdot\vec{s}_2 = 0, ...,  \vec{u}\sdot\vec{s}_k=0 \iff \vec{u} \in S^\bot$
 
-<u>How to:</u> find a basis for $S^\bot$:
-		a. Make rows of matrix as the basis vectors for $S$
+<u>How to:</u> find a basis for $S^\bot$, given $S=span\{\begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}, \begin{bmatrix} -1 \\ 0 \\ 2 \end{bmatrix}\}$: (think of this as a 2D plane in $\R^3$)
+		a. Make the basis vectors for $S$ into rows of a matrix
 		b. Because $A\vec{u}=\begin{bmatrix} \vec{s}_1\sdot\vec{u} \\  \vec{s}_2\sdot\vec{u} \end{bmatrix}$, $\vec{u}$ is in $S^\bot$ only when $A\vec{u} = \vec{0}$
-		c. Solve out $A\vec{u} = \vec{0}$, and find something like $\vec{u} = c_1\begin{bmatrix} 5 \\ 3 \\ 1 \end{bmatrix} + c_2\begin{bmatrix} -4 \\ 2 \\ 7 \end{bmatrix}$
-		d. $S^\bot = \text{span}\{\begin{bmatrix} 5 \\ 3 \\ 1 \end{bmatrix}, \begin{bmatrix} -4 \\ 2 \\ 7 \end{bmatrix}\}$
+		c. Solve out $A\vec{u} = \vec{0}$, and find something like $\vec{u} = t_1\begin{bmatrix} 2 \\ -3 \\ 1 \end{bmatrix}$
+		d. $S^\bot = \text{span}\{\begin{bmatrix} 2 \\ -3 \\ 1 \end{bmatrix}\}$
+
+<u>Definition:</u> A set of vectors $\mathcal{V}$ in $\R^n$ form an orthogonal set if $\vec{v}_i \sdot \vec{v}_j = 0,\ \forall\ \vec{v}_i$ & $\vec{v}_j$ in $\mathcal{V}$, with $i \neq j$
+		a. All of the vectors in the set must be orthogonal to each other 
+
+<u>How to:</u> check if a set of vectors is orthogonal?
+		a. Take the dot product of each possible pair, and if *all* are 0, then set is orthogonal
+
+<u>Thm 8.13:</u> An orthogonal set of nonzero vectors is linearly *in*dependent
+
+<u>Definition:</u> Orthogonal basis of a subspace is a *basis* which is also an *orthogonal* set
+
+<u>Thm 8:14:</u> If $S$ is a subspace w/ orthogonal basis $=\{\vec{v}_1,...,\vec{v}_k\} \subseteq \R^n$, 
+		Then $\forall\ \vec{s} \in S$: $\vec{s}=c_1\vec{v}_1+...+c_k\vec{v}_k$, where $c_i = \frac{\vec{s} \sdot \vec{v}_i}{||\vec{v}_i||^2}$
+
+<u>How to:</u> express $\vec{s}$ as a linear combination of a given orthogonal vector basis:
+		a. Use Thm 8.14 to get a $c_i$ for each vector in the basis, and the result will be something like $\vec{s} = -2\vec{v}_1 + \vec{v}_2$
+
+
