@@ -367,7 +367,7 @@ INSERT PIC
 <u>Thm 5.18:</u> If $A$ is invertible, then:
 	$A^{-1}=adj(A)/det(A)$, where $\text{adj}(A)=C^T$, the transpose of the cofactor matrix of $A$
 
-<u>Thm</u>: $A(\text{adj}(A)=\det(A)*I_n)$
+<u>Thm</u>: $A(\text{adj}(A)=\det(A)*I_n$
 
 <u>Thm 5.20:</u> Let *D* be a region w finite area in $\vec{R}^2$, $T(\vec{x})=A\vec{x}$, and $T(D)$ is the image of *D* under $T$, then:
 	$\text{area}(T(D)) = |\text{det}(A)|*\text{area}(D)$
@@ -440,10 +440,34 @@ INSERT PIC
 
 <u>How to</u>: Get $k$th power of matrix:   $A^k=PD^{k}P^{-1}$
 
+## Ch 7
 
+### Ch 7.1 Vector Spaces + Subspaces
 
+<u>Definition</u>: Vector space is a set $V$ of vectors, together w/  operations of addition and scalar multiplication:
+		a. $V$ is closed under addition: 	If $\vec{v}_1$ and $\vec{v}_2$ are in $V$, then so is $\vec{v}_1+\vec{v}_2$
+		b. $V$ is closed under *scalar* multiplication: 	If $c$ is a real scalar and $\vec{v}$ is in $V$, then so is $c\vec{v}$
+		c. There exists a zero vector $\vec{0}$ in $V$ s.t. $\vec{0}+\vec{v}=\vec{v}$ for all $\vec{v}$ in $V$
+		d. There exists an additive inverse $-\vec{v}$ in $V$ s.t. $\vec{-v}+\vec{v}=\vec{0}$ for all $\vec{v}$ in $V$
+		e. For all $\vec{v}_1, \vec{v}_2, \vec{v}_3$ in $V$:
+				a. $\vec{v}_1 + \vec{v}_2 = \vec{v}_2 + \vec{v}_1$
+				b. $(\vec{v}_1 + \vec{v}_2) + \vec{v}_3 = \vec{v}_1 + (\vec{v}_2 + \vec{v}_3) $
+				c. $c_1(\vec{v}_1+\vec{v}_2) = c_1\vec{v}_1+c_1\vec{v}_2$
+				d. $(c_1 + c_2)\vec{v}_1 = c_1\vec{v}_1 + c_2\vec{v}_1$
+				e. $(c_1c_2)\vec{v}_1 = c_1(c_2\vec{v}_1)$
+				f. $1*\vec{v}_1 = \vec{v}_1$
 
+<u>Thm 7.2:</u> Let $\vec{v}$ be in vector space $V$:
+		a. $\vec{0}$ is the zero vector in $V$ $\implies$ $\vec{v}+\vec{0}=\vec{v}$
+		b. $-\vec{v}$ is the additive inverse of $\vec{v}$ $\implies$ $-\vec{v}+\vec{v}=\vec{0}$
+		c. $\vec{v}$ has unique additive inverse $-\vec{v}$
+		d. Zero vector $\vec{0}$ is unique
+        e. $0*\vec{v}=\vec{0}$
+		f. $(-1)*\vec{v}=-\vec{v}$
 
+<u>Definition</u>: A subset $S$ of a vector space $V$ is a subspace if $S$:
+		a. $S$ contains the zero vector, $\vec{0}$
+		b. If $\vec{u}, \vec{v}$ is in $S$, then $\vec{u}+\vec{v}$ is also in $S$
+		c. If $c$ is a scalar and $\vec{v}$ is in $S$, then $c\vec{v}$ is also in $S$
 
-
-
+ 
