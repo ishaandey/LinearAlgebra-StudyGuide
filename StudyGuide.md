@@ -387,6 +387,9 @@ INSERT PIC
 
 <u>Thm 6.2:</u> If $\vec{u}$ is an eigenvector of $A$ associated with $\lambda $, then $c\vec{u}$ is also associated w/ $\lambda$
 
+<u>How to:</u> Check if a given vector $\vec{u}$ is a eigenvector of $A$?
+		a. Multiply $A\vec{u}$, and the result should be some multiple $ c \vec{u} $
+
 <u>How to:</u> Find an eigenvector if you know the eigenvalues for a given $n$x$n$ matrix $A$:
 	For a specific eigenvector, say  $\lambda =6$:  $(A\vec{u}-6I_{n})\vec{u}=\vec{0}$
 		a. Subtract off $6$ from each value along the *diagonal* of $A$
@@ -483,6 +486,27 @@ INSERT PIC
 <u>Thm 7.9</u> If set $\mathcal{V}$ = $\{ \vec{v}_1, \vec{v}_2, ..., \vec{v}_m \}$ is a subset of $V$, then:
 		a. $\mathcal{V}$ is *linearly independent* $\iff$ $\{ \vec{v}_1, \vec{v}_2, ..., \vec{v}_m \}=\vec{v}$ has *at most* one solution for each $\vec{v}$ in $V$
         b. $\mathcal{V}$ *spans* $V$ $\iff$ $\{ \vec{v}_1, \vec{v}_2, ..., \vec{v}_m \}=\vec{v}$ has *at least* one solution for each $\vec{v}$ in $V$
+
+<u>How to:</u> Check if a system is linearly independent, i.e. given $a(1)+b(sin(x))+c(cos(x))=0$?
+		a. To generate a system of equations, take the first and second derivatives wrt. $x$ to generate 3 equations
+		b. Check if the determinant $\neq 0$, $\implies$ the matrix is invertible, $\implies$ the system $A\vec{x}=\vec{0}$ has a unique solution which is the trivial solution.
+
+<u>Application:</u> Decomposition of signal frequencies:
+		I.e. Given $1, sin(x), cos(x), sin(2x), cos(2x),..., sin(nx), cos(nx)$, is this system linearly independent?
+
+<u>Definition:</u> $\mathbb{P}^n$ is the set of all polynomials of degree $\leq n$
+		a. Standard bases: $\{1,x,x^2,...,x^n\} \implies dim(\mathbb{P}^n=n+1)$
+
+<u>How to</u>: check if a given set of polynomials, i.e. $\{x+1,x^2-1,x^2+x+1\}$, is a basis of $\mathbb{P}^2$?
+		a. Check linear independence: Assign a scalar $c_i$ to each polynomial; each column represents $c_i$, and each element in each *column* corresponds to a different degree of that polynomial, i.e. $x^2$
+			$c_1(x+1)+c_2(x^2-1)+c_3(x^2+x+1)=\vec{0}$
+			$\implies (c_1-c_2+c_3)*1+(c_1+c_3)*x+(c_2+c_3)*x^2=0$
+			$\implies \begin{pmatrix} 1\ -1\ 1 \\ 1 \ 0 \ 1 \\ 0 \ 1 \ 1 \end{pmatrix} \begin{pmatrix}c_1\\c_2\\c_3\end{pmatrix} = \begin{pmatrix}0\\0\\0\end{pmatrix}$
+			a1. Check that determinant $\neq 0$ which would imply unique trivial solution, which implies linear independence
+		b. Could also check that they $\text{span} \mathbb{P}^2$
+		$\implies \begin{pmatrix} 1\ -1\ 1 \\ 1 \ 0 \ 1 \\ 0 \ 1 \ 1 \end{pmatrix} \begin{pmatrix}c_1\\c_2\\c_3\end{pmatrix} = \begin{pmatrix}a\\b\\c\end{pmatrix}$
+		c. Could also check matrix of derivatives: if there exists at least a single value of $x$ that makes $det(A) \neq 0$, $\implies$ linear indpendence.
+			\begin{vmatrix} x+1\ x^2-1\ x^2+x+1 \\ 1 \ 2x \ 2x+1 \\ 0 \ 2 \ 2 \end{vmatrix}
 
 ### 7.3 Basis and Dimension
 
