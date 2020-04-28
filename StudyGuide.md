@@ -678,12 +678,30 @@ INSERT PIC
 
 ### 10.1 Inner Products
 
-<u>Definition</u>: Inner product on $V$ is a function that takes two *vectors* in $V$ as input and produces a *scalar* as output, and is denoted by
+<u>Definition</u>: Inner product on $V$ is a function that takes two *vectors* in $V$ as input and produces a *scalar* as output, and is denoted by $\langle \vec{u}, \vec{v} \rangle$. It must satisfy:
+		a. $\langle \vec{u}, \vec{v} \rangle = \langle \vec{v}, \vec{u} \rangle$
+		b. $\langle \vec{u}+\vec{v}, \vec{w} \rangle = \langle \vec{u}, \vec{w} \rangle + \langle \vec{v}, \vec{w} \rangle$
+		c. $\langle c\vec{u}, \vec{v} \rangle = \langle \vec{u}, \vec{cv} \rangle = c\langle \vec{u}, \vec{v} \rangle$
+		d. $\langle \vec{u}, \vec{u} \rangle \geq 0$, and $\langle \vec{u}, \vec{u} = 0\rangle$ only when $\vec{u}=0$
 
-<u>Definition</u>:
+​	Dot product is an inner product on $\R^n$, it could also be "weighted" by some third param $t_i$ for every $u_i$ and $v_i$ in $\vec{u}\sdot\vec{v}$
 
-<u>Definition</u>:
+<u>Definition</u>: $\vec{u} and \vec{v}$ are orthogonal $\iff \langle \vec{u}, \vec{v} \rangle =0$
 
-<u>Definition</u>:
+<u>Definition</u>: The norm of $\vec{v}$:   $||\vec{v}||=\sqrt{\langle \vec{v}, \vec{v} \rangle}$
+		a. Distance between vectors: $||\vec{u}-\vec{v}||$
+		b. Norm of $\vec{cv} = |c|\ ||\vec{u}||$
 
-<u>Definition</u>:
+<u>Pythagorean Thm 10.4</u>: $\vec{u}$ and $\vec{v}$ are orthogonal $\iff$ $||\vec{u}||^2 + ||\vec{v}||^2 = ||\vec{u}+\vec{v}||^2$
+
+<u>Definition</u>: Projection of $\vec{u}$ onto $\vec{v}$: $\text{proj}_{\vec{v}}\vec{u} = \frac{\langle \vec{u}, \vec{v} \rangle}{\langle \vec{v}, \vec{v} \rangle}\vec{v} = \frac{\langle \vec{u}, \vec{v} \rangle}{||\vec{v}||^2}\vec{v}$
+
+<u>Thm 10.6</u>: For a projection when $\vec{v} \text{ and } c$ is nonzero:
+		a. $\text{proj}_v\vec{u}$ lies on $span\{\vec{v}\}$
+		b. $\vec{u}-\text{proj}_v\vec{u}$ is orthogonal to $\vec{v}$
+		c. if $\vec{u}$ is in $\text{span}\{\vec{v}\}$, then $\text{proj}_v\vec{u} = \vec{u}$
+		d. $\text{proj}_v\vec{u}$ = $\text{proj}_{cv}\vec{u}$
+
+<u>Cauchy-Schwarz Inequality Thm 10.7:</u> 	 $|\langle \vec{u}, \vec{v} \rangle| \leq ||\vec{u}||\text{ }||\vec{v}||$
+
+<u>Triangle Inequality Thm 10.8</u> 	$||\vec{u} + \vec{v}|| \leq ||\vec{u}||+||\vec{v}||$
