@@ -150,8 +150,8 @@ e. $AI = IA = A$
 
 ###### Non-Properties of Nonzero Matrices 
 
-a. It is possible that $AB \neq BA$
-b. $AB=0$ does not imply that $A=0$ and $B=0$
+a. It is possible that $AB \neq BA$ (Unless both are square)
+b. $AB=0$ does not imply that $A=0$ or $B=0$
 c. $AC = BC$ does not imply that $A=B$ or $C=0$ (unless $A$ is invertible)
 
 ###### Transpose of a Matrix 
@@ -205,7 +205,7 @@ c. $(AC)^T = C^T A^T$
 
 <u>Thm</u>: Given $T:\ \mathbb{R}^m\ \rightarrow\ \mathbb{R}^n$ is a *linear* transformation:
 	a. $ker({T})$ is a subspace of the domain $\mathbb{R}^m$
-	b. $range({T})$ is a subspace of the codomain $\mathbb{R}^n$ 
+	b. $range({T})$ is a subspace of the *co*domain $\mathbb{R}^n$ 
 
 \> "The kernel is the set of vectors that are sent to {$\vec{0}$} after applying $T$"
 \> "The range of T is the span after applying $T$"
@@ -219,30 +219,30 @@ c. $(AC)^T = C^T A^T$
 
 ### 4.2 Basis vectors
 
-<u>Definition</u>: Set *B* $= \vec{\{u_1...u_m\}}$ is a *basis* of subspace S iff:
-	a. *B* spans S
-	b. *B* is linearly independent
-"To get to any point in S, you can take a linear combination of the basis vectors to get there"
+<u>Definition</u>: Set $\mathcal{B}$ $= \vec{\{u_1...u_m\}}$ is a *basis* of subspace S iff:
+	a. $\mathcal{B}$ spans S
+	b. $\mathcal{B}$ is linearly independent
+"To get to any point in $S$, you can take a linear combination of the basis vectors to get there"
 
-<u>How to</u>: find a basis for S = span$\vec{\{u_1...u_m\}}$? 
+<u>How to</u>: find a basis for $S$ = span$\vec{\{u_1...u_m\}}$? 
 *Method 1 (Thm 4.10):*
 	a. Create a matrix $\begin{pmatrix}\vec{u_1\\...\\u_m}\end{pmatrix} $
-	b. Row reduce to B
-	c. The nonzero *rows* of B give a basis of S
+	b. Row reduce to $B$
+	c. The nonzero *rows* of $B$ give a basis of $S$
 *Method 2 (Thm 4.11):*
 	a. Create a matrix out of $\vec{\{u_1...u_m\}}$
-	b. Row reduce to B. The pivot columns of B are linearly independent 
+	b. Row reduce to $B$. The pivot columns of $B$ are linearly independent 
 		(the other cols  are dependent on the pivot columns)
-	c. The *columns of A​* corresponding to the *pivot columns of B* form a basis of S. 
+	c. The *columns of $A$* corresponding to the *pivot columns of $B$* form a basis of S. 
 
 ###### Dimension
 
-<u>Thm</u>: If *S* is a subspace of $\mathbb{R} ^n$, then every basis of *S* has the same number of vectors
+<u>Thm</u>: If $S$ is a subspace of $\mathbb{R} ^n$, then every basis of $S$ has the same number of vectors
 
-<u>Definition</u>: If *S* is a subspace of $\mathbb{R} ^n$, then the *dimension* of *S* is the number of vectors in any basis of *S*
+<u>Definition</u>: If $S$ is a subspace of $\mathbb{R} ^n$, then the *dimension* of $S$is the number of vectors in any basis of $S$
 
-<u>Thm</u>: Let *U* = $\vec{\{u_1...u_m\}}$ is a set of $m$ vectors in subspace S of dimension $m$. 
-		IF U is *either* linearly independent or spans S, THEN U is a basis for S.
+<u>Thm</u>: $\mathcal{U}$ = $\vec{\{u_1...u_m\}}$ is a set of $m$ vectors in subspace S of dimension $m$. 
+		IF $\mathcal{U}$ is *either* linearly independent or spans S, THEN $\mathcal{U}$ is a basis for S.
 
 <u>How to</u>: expand a set of vectors to become a basis of $\R^n$:
 	a. Append on all the unit vectors of $\R$ ,  $\vec{e_i}$  ,  that you have and then row reduce down to B. 
@@ -260,7 +260,7 @@ c. $(AC)^T = C^T A^T$
 
 ### 4.3 Row and Column Spaces
 
-<u>Definition</u>: Row vectors of A come from viewing A as a set of rows; Column vectors of A come from viewing A as a set of columns.
+<u>Definition</u>: Row vectors of $A$ come from viewing $A$ as a set of rows; Column vectors of $A$ come from viewing $A$ as a set of columns.
 
 <u>Definition</u>: Given $A$ is a $n$ x $m$ matrix:
 	a. $row(A)$ or row space is the subspace of $\mathbb{R^m}$ spanned by *row vectors* of $A$
@@ -282,8 +282,8 @@ c. $(AC)^T = C^T A^T$
 *Note: $ker(T) $ is $ null(A), $ and $ range(T)$ is $col(A)$
 
 <u>Thm</u>: IF $A$ is a $n$ x $m$ matrix, and $\vec{b}$ is a vector in $\mathbb{R^n}$:
-	a. The system $A\vec{x}=\vec{b}$ is consistent $\iff$ $\vec{b}$ is in $col(A)$
-	b. The system $A\vec{x}=\vec{b}$ has a unique solution  $\iff$ $\vec{b}$ is in $col(A) $ *and* columns of A are linearly independent
+	a. The system $A\vec{x}=\vec{b}$ is consistent (one or many solutions) $\iff$ $\vec{b}$ is in $col(A)$
+	b. The system $A\vec{x}=\vec{b}$ has a unique solution (exactly 1 solution) $\iff$ $\vec{b}$ is in $col(A) $ *and* columns of A are linearly independent
 
 <u>Unifying Theorem</u>: Given *S* = $\vec\{{a_1 ... a_m}\}, \vec\{{a_1 ... a_m}\} \epsilon \mathbb{R} ^n, A =[\vec{a_1 ... a_m}]$, and $T: \mathbb{R} ^m \rightarrow \mathbb{R} ^n, T(\vec{x}) = A\vec{x}$:
 	a. *S* spans $\mathbb{R}^n$
@@ -301,7 +301,7 @@ c. $(AC)^T = C^T A^T$
 ### 4.4 Change of Basis
 
 <u>Definition</u>: Suppose that $B$  = $\{\vec{u_1 ... u_n}\}$ forms a basis of $\mathbb{R^n}$, and if $\vec{y}=y_1\vec{u_1}+...+y_n\vec{u_n}$:
-	THEN: The *coordinate vector* of $y$ w.r.t. *B* is $[\vec{y}]_B = \begin{pmatrix}y_1\\...\\y_n\end{pmatrix}$
+				Then the *coordinate vector* of $y$ w.r.t. *B* is $[\vec{y}]_B = \begin{pmatrix}y_1\\...\\y_n\end{pmatrix}$
 	"the coordinate vector contains the coeffs required to express y as a linear combination of vectors in basis B"
 
 ​	$	U\begin{pmatrix}y_1\\...\\y_n\end{pmatrix} = y_1\vec{u_1}+...+y_n\vec{u_n}$
@@ -311,15 +311,15 @@ c. $(AC)^T = C^T A^T$
 
 <u>Thm</u>: Let $\vec{x}$ be expressed wrt standard basis, and *B*  = $\{\vec{u_1 ... u_n}\}$ be any basis for $\mathbb{R^n}$:
 	If $U$ = $[\vec{u_1 ... u_n}]$, then: $\vec{x}=U[\vec{x}]_B$ and $[\vec{x}]_B = U^{-1}\vec{x}$ 
-	"$U$ takes us from a vector described in weird basis land into our standard definition"
-	"$U^{-1}$ tells us how to define a vector w/ standard definition into weird basis land"
+	"$U$ takes us from a vector described with a weird basis into our standard definition"
+	"$U^{-1}$ tells us how to define a vector w/ standard definition into back into weird basis land"
 
 <u>How to:</u> Move from one nonstandard basis to another?
 If $B_1$ = $\{\vec{u_1 ... u_n}\}$ corresponds to U and $B_2$ = $\{\vec{v_1 ... v_n}\}$ corresponds to V, then:
 	$[\vec{x}]_{B_2} = V^{-1}U[\vec{x}]_{B_1}$
 	$[\vec{x}]_{B_1} = U^{-1}V[\vec{x}]_{B_2}$
 
-\> "To go from basis 1 to basis 2, apply $U$ to go into standard basis, then apply  $V^{-1}$ to go to basis 2 land"
+​	"To go from basis 1 to basis 2, apply $U$ to go from basis 1 land into standard basis, then apply  $V^{-1}$ to go to basis 2 land"
 
 INSERT PIC
 
@@ -328,11 +328,11 @@ INSERT PIC
 ### 5.1 Determinant
 
 <u>Definition:</u> Given A is a $nxn$ matrix, each position is defined as $a_{ij}$:
-	a. cofactor  $C_{ij} = (-1)^{i+j}*det(M_{ij})$, where $M_{ij}$  is the rest of the matrix that doesn't include the $i$th row & $j$th column
+	a. cofactor  $C_{ij} = (-1)^{i+j}*det(M_{ij})$, where $M_{ij}$  is the rest of the matrix that doesn't include the $i$th row & $j$th column ($M_{ij}$ is called the Minor of $i,j$)
 	b. $det(A)=a_{11}C_{ij}+...+a_{1n}C_{1n}$ :  for each element in the *first* column, multiply each times its cofactor. 
-	c. In general, you can expand down any row or column and apply the same formula (<u>Thm 5.8</u>)
+	c. In general, you can expand down <u>any</u> row or column and apply the same formula (<u>Thm 5.8</u>)
 
-<u>Matrix of signs</u>: $ \begin{pmatrix} +  -  +  - \\ -  +  -  + \\  +  -  +  - \\  -  +  -  + \\ \end{pmatrix} $
+<u>Matrix of signs of cofactors</u>: $ \begin{pmatrix} +  -  +  - \\ -  +  -  + \\  +  -  +  - \\  -  +  -  + \\ \end{pmatrix}; \text{where } C_{ij}=(-1)^{i+j}$
 
 <u>Thm 5.5:</u> $det(I_n)=1$
 
@@ -361,13 +361,13 @@ INSERT PIC
 <u>Cramer's Rule (Thm 5.17):</u> Let $A$ be invertible; to find unique solution, $\vec{x}$, to $A\vec{x}=\vec{b}$:
 	 $\vec{x}_i=\frac{det(A_i)}{det(A)}$, where $A_i$ is the matrix $A$ but with the $i$th column replaced by $\vec{b}$
 
-<u>How To:</u> Find the unique solution to $A\vec{x}={b}$ :
+<u>How To:</u> Find the unique solution to $A\vec{x} = \vec{b} $ :
 	\> Apply Cramer's Rule for each column in $A$
 
 <u>Thm 5.18:</u> If $A$ is invertible, then:
-	$A^{-1}=adj(A)/det(A)$, where $\text{adj}(A)=C^T$, the transpose of the cofactor matrix of $A$
+	$A^{-1}=\frac{adj(A)}{det(A)}$, where $\text{adj}(A)=C^T$, the transpose of the cofactor matrix of $A$
 
-<u>Thm</u>: $A(\text{adj}(A)=\det(A)*I_n$
+<u>Thm</u>: $A(\text{adj}(A))=\det(A)*I_n$
 
 <u>Thm 5.20:</u> Let *D* be a region w finite area in $\vec{R}^2$, $T(\vec{x})=A\vec{x}$, and $T(D)$ is the image of *D* under $T$, then:
 	$\text{area}(T(D)) = |\text{det}(A)|*\text{area}(D)$
@@ -380,15 +380,15 @@ INSERT PIC
 
 <u>Definition:</u> Let $A$ be a $n$ x $n$ matrix; $\vec{u}$ is an eigen*vector* of $A$ if there exists a scalar $\lambda$ s.t. 
 			$A\vec{u}=\lambda\vec{u}$ ; where $\lambda$ is an eigen*value* of $A$
-	\> <u>Intuition</u>: If $A$ is a transofrmation that changes the basis vectors of our subspace, 
-		then we expect most vectors to also be transformed.
+		<u>Intuition</u>: If $A$ is a transofrmation that changes the basis vectors of our subspace, 
+		then we expect most vectors to also be transformed in some manner (sheared, etc).
 		Eigen*vectors* are the specific vectors that remain parallel after the transformation, 
 		and the degree to which its scaled is called the eigen*value*
 
 <u>Thm 6.2:</u> If $\vec{u}$ is an eigenvector of $A$ associated with $\lambda $, then $c\vec{u}$ is also associated w/ $\lambda$
 
 <u>How to:</u> Check if a given vector $\vec{u}$ is a eigenvector of $A$?
-		a. Multiply $A\vec{u}$, and the result should be some multiple $ c \vec{u} $
+		a. Multiply $A*\vec{u}$, and the result should be some multiple $ c \vec{u} $
 
 <u>How to:</u> Find an eigenvector if you know the eigenvalues for a given $n$x$n$ matrix $A$:
 	For a specific eigenvector, say  $\lambda =6$:  $(A\vec{u}-6I_{n})\vec{u}=\vec{0}$
@@ -406,7 +406,7 @@ INSERT PIC
 
 <u>How to:</u> find eigenvalues of $A$:
 		a. Subtract off $\lambda $ from each diagonal, and take the determinant of that matrix
-			\> The result is called the characteristic polynomial btw
+					The result is called the characteristic polynomial btw
 		b. Set that equal to 0, and solve for lambda
 
 <u>Definition:</u> Multiplicity is the number of times a root of the characteristic equation is repeated, aka equal to its factor's exponent
@@ -424,7 +424,7 @@ INSERT PIC
 <u>How to:</u> Find $P$ and $D$ to diagonalize matrix $A$:
 		a. Find each eigenvalue using $det(A-\lambda I_n)=0$
 		b. Find the associateed eigenvector by solving the homogenous system $(A-I_n)\vec{u}=\vec{0}$
-		c. $P=[\vec{u}_1, \vec{u}_2 , ..., \vec{u}_n]$ ;  $D = \begin{bmatrix} \lambda_1\ \ 0 \\ 0 \ \lambda_2 \end{bmatrix} $ 
+		c. $P=[\vec{u}_1, \vec{u}_2 , ..., \vec{u}_n]$ ;  $D = \begin{bmatrix} \lambda_1\ & 0 \\ 0 & \lambda_2 \end{bmatrix} $ 
 
 <u>Thm 6.9:</u> $A$ is diagonalizable $\iff$ $A$ has eigenvectors that form a basis for $\vec{R}^n$ 
 		$\iff$ $A$ has $n$ linearly *independent* eigenvectors
@@ -674,5 +674,16 @@ INSERT PIC
 <u>Thm 8.27:</u> If $A$ ~ real matrix, $\implies$ then $A^TA$ has nonnegative eigenvalues
 		Note: this works on $2x3$ matrices, for example
 
+## Ch 10
 
+### 10.1 Inner Products
 
+<u>Definition</u>: Inner product on $V$ is a function that takes two *vectors* in $V$ as input and produces a *scalar* as output, and is denoted by
+
+<u>Definition</u>:
+
+<u>Definition</u>:
+
+<u>Definition</u>:
+
+<u>Definition</u>:
