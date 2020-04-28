@@ -354,6 +354,8 @@ INSERT PIC
 
 <u>Thm 5.10:</u> If $A$ is a square matrix, then $det(A^T) = det(A)$
 
+If $ A $ is invertible, $det(A^{-1}) = \frac{1}{det(A)}$
+
 <u>Thm 5.12:</u> $\det(AB)=det(A)det(B)$ if $A$ and $B$ are both $n$ x $n$ matrices
 
 ### 5.3 Applications of Determinants
@@ -409,7 +411,7 @@ INSERT PIC
 					The result is called the characteristic polynomial btw
 		b. Set that equal to 0, and solve for lambda
 
-<u>Definition:</u> Multiplicity is the number of times a root of the characteristic equation is repeated, aka equal to its factor's exponent
+<u>Definition:</u> Multiplicity is the number of times a root of the characteristic equation is repeated, aka multiplicity is equal to its factor's exponent
 
 <u>Thm 6.6:</u> Let $A$ be a square matrix w/ eigenvalue $\lambda$: Then $\text{dim}$ of associated eigenspace is $\leq$ multiplicity of $\lambda$
 
@@ -705,3 +707,23 @@ INSERT PIC
 <u>Cauchy-Schwarz Inequality Thm 10.7:</u> 	 $|\langle \vec{u}, \vec{v} \rangle| \leq ||\vec{u}||\text{ }||\vec{v}||$
 
 <u>Triangle Inequality Thm 10.8</u> 	$||\vec{u} + \vec{v}|| \leq ||\vec{u}||+||\vec{v}||$
+
+### 10.2 Gram-Schmidt Revisted
+
+<u>Definition:</u> Vectors $\{ \vec{v}_1, \dots, \vec{v)_k \}$ in an inner product space $V$ form an orthogonal set if $\langle \vec{v}_i, \vec{v}_j \rangle = 0 $ for $i \neq j$
+
+<u>Definition:</u> If $\mathcal{V} = \{ \vec{v}_1, \dots, \vec{v)_k \}$ is an orthogonal set of nonzero vectors in inner product space $V$, $\implies$ then $\mathcal{V}$ is linearly *in*dependent
+
+<u>How to:</u>   find orthonormal basis of a given basis:
+		a. Do GS process to a new set of orthogonal basis vectors
+		b. Normalize each one by dividing by the norms
+
+<u>Definition:</u>
+
+<u>Definition:</u>
+
+<u>Definition:</u>
+
+<u>Definition:</u>
+
+
