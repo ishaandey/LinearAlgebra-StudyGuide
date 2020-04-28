@@ -639,17 +639,30 @@ INSERT PIC
 ​		<u>Intuition:</u> The basis vectors of $S$ are already linearly independent, so you know that none of them are parallel to the others. We start off with the first basis vector of $S$ becoming the first orthogonal basis vector $\vec{v}_1$. We can find a basis vector orthogonal to that by taking the second basis vector, and subtracting off it's projection onto the previous vector to define the new orthogonal basis vector $\vec{v}_2$ (because we know that difference will be orthogonal) . We can keep going for all the basis vectors, such that $span\{\vec{v}_1, \vec{v}_2, ..., \vec{v}_k\} = span\{\vec{u}_1, \vec{u}_2, ..., \vec{u}_k\}$, then not only are the $\vec{v}$ vectors defining the same subspace, but they also are orthogonal to each other.
 
 <u>Definition:</u> A set of vectors $\{\vec{w}_1, \vec{w}_2, ..., \vec{w}_k\}$ is orthonormal IF the set is orthogonal AND $||\vec{w}_j||=1\ \forall\ j=1,2,\dots,k$
-			$\vec{w}_j = \frac{1}{||\vec{v}_j||}\vec{v}_j for j=1,2,\dots,k$
+			$\vec{w}_j = \frac{1}{||\vec{v}_j||}\vec{v}_j$ for $j=1,2,\dots,k$
 
 <u>How to:</u> Find a set of orthonormal basis vectors from a given set of basis vectors i.e. $\{\vec{u}_1, \vec{u}_2, \vec{u}_3\}$
 		a. Orthogonalize $\{\vec{u}_1, \vec{u}_2, \vec{u}_3\}$ using GS process to o
 		b. Normalize to obtain an orthonormal basis of $span\{\vec{u}_1, \vec{u}_2, \vec{u}_3\}$
 
+### 8.3 Diagonalizing Symmetric Matrices
 
+<u>Thm 8.21</u> If $A$ ~ symmetric matrix, $\implies$ then the eigenvectors associated w/ distinct eigenvalues are orthogonal
 
+<u>Definition:</u> $P$ ~ square, $n\text{x}n$ with orthonormal columns is called an orthogonal matrix
+		\*Cols must be ortho*normal*, not just orthogonal
 
+<u>Thm 8.23:</u> If $P$ ~ $n\text{x}n$, orthonormal, $\implies$ then $P^{-1}=P^T$
 
+<u>Definition</u> $A$ ~ *orthogonally* diagonalizable if there exists an *orthogonal* matrix $P$ and a diagonal matrix $D$ s.t. $A=PDP^{-1} = PDP^{T}$ 
+		$P$ represents the *change of basis matrix* from the standard basis matrix into the one defined by the eigenvectors
 
-​		
+<u>Thm 8.26</u> $A$ ~ orthogonally diagonalizable $\iff$ $A$ ~ symmetric
 
-
+<u>How to:</u> Orthogonally diagonalize a matrix A:
+		a. Get characteristic equation of $det(A-\lambda I_n)$, find eigenvalues
+		b. Find eigenvectors for each eigenvalue (these are all orthogonal to other eigenvectors, but may not be within the same eigenspace)
+		c. Apply Gram-Schmidt process to orthogonalize $\vec{u}_1, \vec{u}_2$ in a common eigenspace (do this step for every eigenspace)s
+		d. Normalize the resulting orthogonal set
+		e. Construct $D$ normally, construct $P$ using the corresponding orthonormal eigenvectors, and write inverse of $P$ as $P^T$
+		
