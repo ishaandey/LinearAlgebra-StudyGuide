@@ -607,4 +607,49 @@ INSERT PIC
 <u>How to:</u> express $\vec{s}$ as a linear combination of a given orthogonal vector basis:
 		a. Use Thm 8.14 to get a $c_i$ for each vector in the basis, and the result will be something like $\vec{s} = -2\vec{v}_1 + \vec{v}_2$
 
+### 8.2 Projection
+
+<u>Definition:</u> Projection of $\vec{u}$ onto$ \vec{v}$: $\text{proj}_v\vec{u}=\frac{\vec{v} \sdot \vec{u}{||\vec{v}||^2}\vec{v}$
+
+<u>Thm 8.16:</u> For a projection when $\vec{v}$ is nonzero:
+		a. $\text{proj}_v\vec{u}$ lies on $span\{\vec{v}\}$
+		b. $\vec{u}-\text{proj}_v\vec{u}$ is orthogonal to $\vec{u}$
+		c. if $\vec{u}$ is in $\text{span}\{\vec{v}\}$, then $\text{proj}_v\vec{u} = \vec{u}$
+		d. $\text{proj}_v\vec{u}$ = $\text{proj}_{cv}\vec{u}$
+
+<u>Definition:</u> Let $S$ be a nonzero subspace w/ orthogonal basis $=\{\vec{v}_1,...,\vec{v}_k\}$ :
+				$\text{proj}_s\vec{u} = \text{proj}_{\vec{v}_1}\vec{u}\ +\ ...\ +\ \text{proj}_{\vec{v}_k}\vec{u}$
+
+<u>Thm 8.18:</u> For a projection on subspace when $S$ is nonzero:
+		a. $\text{proj}_s\vec{u}$ lies in $S$
+		b. $\vec{u}-\text{proj}_s\vec{u}$ is orthogonal to $S$
+		c. If $\vec{u}$ is in $S$, then $\text{proj}_S\vec{u} = \vec{u}$
+		d. $\text{proj}_s\vec{u}$ is independent of the choice of the orthogonal basis of $S$
+
+###### Gram-Schmidt Processes
+
+<u>Thm 8.19</u>: Let $S$ be a subspace with basis $\{\vec{s}_1, ... ,\vec{s}_k$ \}. $\vec{v}_1, \vec{v}_2, ..., \vec{v}_k$ is defined as:
+		$\vec{v}_1 = \vec{s}_1$
+		$\vec{v}_2 = \vec{s}_2 - \text{proj}_{\vec{v}_1}\vec{s}_2$
+		$\vec{v}_3 = \vec{s}_3 - \text{proj}_{\vec{v}_1}\vec{s}_3 - \text{proj}_{\vec{v}_2}\vec{s}_3$
+		$\vec{v}_k = \vec{s}_k - \text{proj}_{\vec{v}_1}\vec{s}_k - \text{proj}_{\vec{v}_2}\vec{s}_k-...-\text{proj}_{\vec{v}_{k-1}}\vec{s}_k$
+		(The pattern here is that the row defining the $i$th vector uses the original basis vector $\vec{s}_i$ on that row only.
+		 The vertical columns are unique to each orthogonal vector, that is to say,  column 1 is always nothing, column 2 is $\vec{v}_1$, and column k is $\vec{v}_{k-1}$   $\leftarrow$ you're recursively defining the next vector)
+
+​		<u>Intuition:</u> The basis vectors of $S$ are already linearly independent, so you know that none of them are parallel to the others. We start off with the first basis vector of $S$ becoming the first orthogonal basis vector $\vec{v}_1$. We can find a basis vector orthogonal to that by taking the second basis vector, and subtracting off it's projection onto the previous vector to define the new orthogonal basis vector $\vec{v}_2$ (because we know that difference will be orthogonal) . We can keep going for all the basis vectors, such that $span\{\vec{v}_1, \vec{v}_2, ..., \vec{v}_k\} = span\{\vec{u}_1, \vec{u}_2, ..., \vec{u}_k\}$, then not only are the $\vec{v}$ vectors defining the same subspace, but they also are orthogonal to each other.
+
+<u>Definition:</u> A set of vectors $\{\vec{w}_1, \vec{w}_2, ..., \vec{w}_k\}$ is orthonormal IF the set is orthogonal AND $||\vec{w}_j||=1\ \forall\ j=1,2,\dots,k$
+			$\vec{w}_j = \frac{1}{||\vec{v}_j||}\vec{v}_j for j=1,2,\dots,k$
+
+<u>How to:</u> Find a set of orthonormal basis vectors from a given set of basis vectors i.e. $\{\vec{u}_1, \vec{u}_2, \vec{u}_3\}$
+		a. Orthogonalize $\{\vec{u}_1, \vec{u}_2, \vec{u}_3\}$ using GS process to o
+		b. Normalize to obtain an orthonormal basis of $span\{\vec{u}_1, \vec{u}_2, \vec{u}_3\}$
+
+
+
+
+
+
+​		
+
 
