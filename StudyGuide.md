@@ -427,6 +427,7 @@ If $ A $ is invertible, $det(A^{-1}) = \frac{1}{det(A)}$
 		a. Find each eigenvalue using $det(A-\lambda I_n)=0$
 		b. Find the associateed eigenvector by solving the homogenous system $(A-I_n)\vec{u}=\vec{0}$
 		c. $P=[\vec{u}_1, \vec{u}_2 , ..., \vec{u}_n]$ ;  $D = \begin{bmatrix} \lambda_1\ & 0 \\ 0 & \lambda_2 \end{bmatrix} $ 
+		$det(A)=det(PDP^{-1})=det(D)=$ product of $\lambda_i$s
 
 <u>Thm 6.9:</u> $A$ is diagonalizable $\iff$ $A$ has eigenvectors that form a basis for $\vec{R}^n$ 
 		$\iff$ $A$ has $n$ linearly *independent* eigenvectors
@@ -434,12 +435,11 @@ If $ A $ is invertible, $det(A^{-1}) = \frac{1}{det(A)}$
 <u>Thm 6.10:</u> If $\{ \lambda_1,...,\lambda_k \} $ are distinct eigenvalues of $A$, 
 				 then any set of associated eigenvectors $\{ \vec{u_1},...,\vec{u}_k \}$ are *linearly independent* 
 		\> Means that vectors from *distinct* eigenspaces are linearly independent
-
 ​		\> This also means that $A$ can be not invertible and yet diagonalizable
 
 <u>Thm 6.11:</u> If $A$ has only real eigenvalues, then:
 			$A$ is diagonalizable $\iff$ $\text{dim}$ of each eigenspace *equals* the multiplicity of corresponding eigenvalue
-		\> Means that you'll know that a matrix isn't diagonalizable (for example) when you see that there's one basis vector of an eigenspace when the root had a higher power
+		\> Means that you'll know that a matrix isn't diagonalizable (for example) when you see that there's one basis vector of an eigenspace when the root had a power of 2
 
 <u>Thm 6.12:</u> If $A$ is a $n$ x $n$ matrix with $n$ *distinct* real eigenvalues, then $A$ is diagonalizable
 
@@ -497,18 +497,18 @@ If $ A $ is invertible, $det(A^{-1}) = \frac{1}{det(A)}$
 		I.e. Given $1, sin(x), cos(x), sin(2x), cos(2x),..., sin(nx), cos(nx)$, is this system linearly independent?
 
 <u>Definition:</u> $\mathbb{P}^n$ is the set of all polynomials of degree $\leq n$
-		a. Standard bases: $\{1,x,x^2,...,x^n\} \implies dim(\mathbb{P}^n=n+1)$
+		a. Standard bases: $\{1,x,x^2,...,x^n\} \implies dim(\mathbb{P}^n)=n+1$
 		b. $\text{dim } \mathbb{P} = \infin$, enough to show that there is no finite basis
-			b1. $\mathbb{P} \subset C(\R) \implies \text{dim } C(\R) = \infin$
+			b1. $\mathbb{P} \subseteq C(\R) \implies \text{dim } C(\R) = \infin$
 
 <u>How to</u>: check if a given set of polynomials, i.e. $\{x+1,x^2-1,x^2+x+1\}$, is a basis of $\mathbb{P}^2$?
 		a. Check linear independence: Assign a scalar $c_i$ to each polynomial; each column represents $c_i$, and each element in each *column* corresponds to a different degree of that polynomial, i.e. $x^2$
 			$c_1(x+1)+c_2(x^2-1)+c_3(x^2+x+1)=\vec{0}$
 			$\implies (c_1-c_2+c_3)*1+(c_1+c_3)*x+(c_2+c_3)*x^2=0$
-			$\implies \begin{pmatrix} 1\ -1\ 1 \\ 1 \ 0 \ 1 \\ 0 \ 1 \ 1 \end{pmatrix} \begin{pmatrix}c_1\\c_2\\c_3\end{pmatrix} = \begin{pmatrix}0\\0\\0\end{pmatrix}$
+			$\implies \begin{pmatrix} 1& -1& 1 \\ 1 & 0 & 1 \\ 0 & 1 & 1 \end{pmatrix} \begin{pmatrix}c_1\\c_2\\c_3\end{pmatrix} = \begin{pmatrix}0\\0\\0\end{pmatrix}$
 			a1. Check that determinant $\neq 0$ which would imply unique trivial solution, which implies linear independence
 		b. Could also check that they $\text{span} \mathbb{P}^2$
-			$\implies \begin{pmatrix} 1\ -1\ 1 \\ 1 \ 0 \ 1 \\ 0 \ 1 \ 1 \end{pmatrix} \begin{pmatrix}c_1\\c_2\\c_3\end{pmatrix} = \begin{pmatrix}a\\b\\c\end{pmatrix}$
+			$\implies \begin{pmatrix} 1& -1& 1 \\ 1 & 0 & 1 \\ 0 & 1 & 1 \end{pmatrix} \begin{pmatrix}c_1\\c_2\\c_3\end{pmatrix} = \begin{pmatrix}a\\b\\c\end{pmatrix}$
 		c. Could also check matrix of derivatives: if there exists at least a single value of $x$ that makes $det(A) \neq 0$, $\implies$ linear indpendence.
 			$\begin{vmatrix} x+1& x^2-1 & x^2+x+1 \\ 1 & 2x & 2x+1 \\ 0 & 2 & 2 \end{vmatrix}$
 
