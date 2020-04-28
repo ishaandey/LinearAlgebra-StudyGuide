@@ -609,7 +609,7 @@ INSERT PIC
 
 ### 8.2 Projection
 
-<u>Definition:</u> Projection of $\vec{u}$ onto$ \vec{v}$: $\text{proj}_v\vec{u}=\frac{\vec{v} \sdot \vec{u}{||\vec{v}||^2}\vec{v}$
+<u>Definition:</u> Projection of $\vec{u}$ onto $\vec{v}$: $\text{proj}_v\vec{u}=\frac{\vec{u} \sdot \vec{v}}{||\vec{v}||^2}\vec{v}$
 
 <u>Thm 8.16:</u> For a projection when $\vec{v}$ is nonzero:
 		a. $\text{proj}_v\vec{u}$ lies on $span\{\vec{v}\}$
@@ -654,15 +654,25 @@ INSERT PIC
 
 <u>Thm 8.23:</u> If $P$ ~ $n\text{x}n$, orthonormal, $\implies$ then $P^{-1}=P^T$
 
-<u>Definition</u> $A$ ~ *orthogonally* diagonalizable if there exists an *orthogonal* matrix $P$ and a diagonal matrix $D$ s.t. $A=PDP^{-1} = PDP^{T}$ 
-		$P$ represents the *change of basis matrix* from the standard basis matrix into the one defined by the eigenvectors
+<u>How to:</u> Check if a given matrix $A$ is orthogonal:
+		a. Check that dot products of the columns are $0$
+		b. Check that the norm of each column is $1$
 
-<u>Thm 8.26</u> $A$ ~ orthogonally diagonalizable $\iff$ $A$ ~ symmetric
+<u>Definition</u> $A$ ~ *orthogonally* diagonalizable if there exists an *orthogonal* matrix $P$ and a diagonal matrix $D$ s.t. $A=PDP^{-1} = PDP^{T}$ 
+		$P$ represents the *change of basis matrix* from the standard basis into the one defined by the eigenvectors
+
+<u>Spectral Thm 8.26</u> $A$ ~ orthogonally diagonalizable $\iff$ $A$ ~ symmetric
+		a. $\implies$ All eigenvalues of a symmetric matrix $A$ are real
+		b. Each eigenspace of a symmetric matrix $A$ has dimension *equal* to the multiplicity of the associated eigenvalue
 
 <u>How to:</u> Orthogonally diagonalize a matrix A:
 		a. Get characteristic equation of $det(A-\lambda I_n)$, find eigenvalues
 		b. Find eigenvectors for each eigenvalue (these are all orthogonal to other eigenvectors, but may not be within the same eigenspace)
-		c. Apply Gram-Schmidt process to orthogonalize $\vec{u}_1, \vec{u}_2$ in a common eigenspace (do this step for every eigenspace)s
-		d. Normalize the resulting orthogonal set
-		e. Construct $D$ normally, construct $P$ using the corresponding orthonormal eigenvectors, and write inverse of $P$ as $P^T$
-		
+		c. Apply Gram-Schmidt process to orthogonalize $\vec{u}_1, \vec{u}_2$ in a common eigenspace (do this step for every eigenspace)
+		d. Normalize the the orthogonal set of vectors (even the ones from $\text{dim }1$)
+		e. Construct $D$ normally, construct $P$ using the corresponding orthonormal eigenvectors, and write inverse of $P$ as $P^T$. (Make sure to position eigenvectors s.t. $P$ is symmetrical)		
+<u>Thm 8.27:</u> If $A$ ~ real matrix, $\implies$ then $A^TA$ has nonnegative eigenvalues
+		Note: this works on $2x3$ matrices, for example
+
+
+
