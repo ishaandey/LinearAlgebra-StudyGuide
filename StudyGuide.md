@@ -427,7 +427,10 @@ If $ A $ is invertible, $det(A^{-1}) = \frac{1}{det(A)}$
 		a. Find each eigenvalue using $det(A-\lambda I_n)=0$
 		b. Find the associateed eigenvector by solving the homogenous system $(A-I_n)\vec{u}=\vec{0}$
 		c. $P=[\vec{u}_1, \vec{u}_2 , ..., \vec{u}_n]$ ;  $D = \begin{bmatrix} \lambda_1\ & 0 \\ 0 & \lambda_2 \end{bmatrix} $ 
+
+<u>Thm</u>: 
 		$det(A)=det(PDP^{-1})=det(D)=$ product of $\lambda_i$s
+        If $A$ is triangular, eigenvalues lie along the diagonal
 
 <u>Thm 6.9:</u> $A$ is diagonalizable $\iff$ $A$ has eigenvectors that form a basis for $\vec{R}^n$ 
 		$\iff$ $A$ has $n$ linearly *independent* eigenvectors
@@ -502,13 +505,15 @@ If $ A $ is invertible, $det(A^{-1}) = \frac{1}{det(A)}$
 			b1. $\mathbb{P} \subseteq C(\R) \implies \text{dim } C(\R) = \infin$
 
 <u>How to</u>: check if a given set of polynomials, i.e. $\{x+1,x^2-1,x^2+x+1\}$, is a basis of $\mathbb{P}^2$?
-		a. Check linear independence: Assign a scalar $c_i$ to each polynomial; each column represents $c_i$, and each element in each *column* corresponds to a different degree of that polynomial, i.e. $x^2$
+		
+
+a. Check linear independence: Assign a scalar $c_i$ to each polynomial; each column represents $c_i$, and each element in each *column* corresponds to a different degree of that polynomial, i.e. $x^2$
 			$c_1(x+1)+c_2(x^2-1)+c_3(x^2+x+1)=\vec{0}$
 			$\implies (c_1-c_2+c_3)*1+(c_1+c_3)*x+(c_2+c_3)*x^2=0$
-			$\implies \begin{pmatrix} 1& -1& 1 \\ 1 & 0 & 1 \\ 0 & 1 & 1 \end{pmatrix} \begin{pmatrix}c_1\\c_2\\c_3\end{pmatrix} = \begin{pmatrix}0\\0\\0\end{pmatrix}$
+			$\implies \begin{pmatrix} 1\ -1\ 1 \\ 1 \ 0 \ 1 \\ 0 \ 1 \ 1 \end{pmatrix} \begin{pmatrix}c_1\\c_2\\c_3\end{pmatrix} = \begin{pmatrix}0\\0\\0\end{pmatrix}$
 			a1. Check that determinant $\neq 0$ which would imply unique trivial solution, which implies linear independence
-		b. Could also check that they $\text{span} \mathbb{P}^2$
-			$\implies \begin{pmatrix} 1& -1& 1 \\ 1 & 0 & 1 \\ 0 & 1 & 1 \end{pmatrix} \begin{pmatrix}c_1\\c_2\\c_3\end{pmatrix} = \begin{pmatrix}a\\b\\c\end{pmatrix}$
+		b. Could also check that they $\text{span } \mathbb{P}^2$
+			$\implies \begin{pmatrix} 1\ -1\ 1 \\ 1 \ 0 \ 1 \\ 0 \ 1 \ 1 \end{pmatrix} \begin{pmatrix}c_1\\c_2\\c_3\end{pmatrix} = \begin{pmatrix}a\\b\\c\end{pmatrix}$
 		c. Could also check matrix of derivatives: if there exists at least a single value of $x$ that makes $det(A) \neq 0$, $\implies$ linear indpendence.
 			$\begin{vmatrix} x+1& x^2-1 & x^2+x+1 \\ 1 & 2x & 2x+1 \\ 0 & 2 & 2 \end{vmatrix}$
 
@@ -574,7 +579,7 @@ If $ A $ is invertible, $det(A^{-1}) = \frac{1}{det(A)}$
 <u>Cauchy-Schwarz Inequality Thm 8.7:</u> 	 $|\vec{u}\sdot\vec{v}| \leq ||\vec{u}||\text{ }||\vec{v}||$
 		a. Define $cos(\theta)=\frac{\vec{u}\sdot\vec{v}}{||\vec{u}||\text{ }||\vec{v}||}$
 
-<u>Triangle Inequality Thm 8.8</u> 	$|\vec{u} + \vec{v}| \leq ||\vec{u}||+||\vec{v}||$
+<u>Triangle Inequality Thm 8.8</u> 	$||\vec{u} + \vec{v}|| \leq ||\vec{u}||+||\vec{v}||$
 		a. This says that the line segment between two vectors is the shortest way between those two points 
 
 ######  Orthogonal Subspaces
@@ -653,6 +658,7 @@ If $ A $ is invertible, $det(A^{-1}) = \frac{1}{det(A)}$
 
 <u>Definition:</u> $P$ ~ square, $n\text{x}n$ with orthonormal columns is called an orthogonal matrix
 		\*Cols must be ortho*normal*, not just orthogonal
+		$\implies P^TP=I_n$
 
 <u>Thm 8.23:</u> If $P$ ~ $n\text{x}n$, orthonormal, $\implies$ then $P^{-1}=P^T$
 
@@ -673,8 +679,10 @@ If $ A $ is invertible, $det(A^{-1}) = \frac{1}{det(A)}$
 		c. Apply Gram-Schmidt process to orthogonalize $\vec{u}_1, \vec{u}_2$ in a common eigenspace (do this step for every eigenspace)
 		d. Normalize the the orthogonal set of vectors (even the ones from $\text{dim }1$)
 		e. Construct $D$ normally, construct $P$ using the corresponding orthonormal eigenvectors, and write inverse of $P$ as $P^T$. (Make sure to position eigenvectors s.t. $P$ is symmetrical)		
+
 <u>Thm 8.27:</u> If $A$ ~ real matrix, $\implies$ then $A^TA$ has nonnegative eigenvalues
 		Note: this works on $2x3$ matrices, for example
+		$A^TA$ is always symmetric $\implies$ all the stuff from this 	chapter holds, plus the fact that the eigenvalues are nonnegative
 
 ## Ch 10
 
@@ -710,7 +718,7 @@ If $ A $ is invertible, $det(A^{-1}) = \frac{1}{det(A)}$
 
 ### 10.2 Gram-Schmidt Revisted
 
-<u>Definition:</u> Vectors $\{ \vec{v}_1, \dots, \vec{v)_k \}$ in an inner product space $V$ form an orthogonal set if $\langle \vec{v}_i, \vec{v}_j \rangle = 0 $ for $i \neq j$
+<u>Definition:</u> Vectors $ \{  \vec{v}_1, \dots, \vec{v)_k  \} $ in an inner product space $V$ form an orthogonal set if $ \langle \vec{v}_i, \vec{v}_j \rangle = 0 $ for $i \neq j$
 
 <u>Definition:</u> If $\mathcal{V} = \{ \vec{v}_1, \dots, \vec{v)_k \}$ is an orthogonal set of nonzero vectors in inner product space $V$, $\implies$ then $\mathcal{V}$ is linearly *in*dependent
 
