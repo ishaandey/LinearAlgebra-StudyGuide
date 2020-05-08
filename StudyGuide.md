@@ -332,7 +332,7 @@ If $B_1$ = $\{\vec{u_1 ... u_n}\}$ corresponds to U and $B_2$ = $\{\vec{v_1 ... 
 	b. $det(A)=a_{11}C_{ij}+...+a_{1n}C_{1n}$ :  for each element in the *first* column, multiply each times its cofactor. 
 	c. In general, you can expand down <u>any</u> row or column and apply the same formula (<u>Thm 5.8</u>)
 
-<u>Matrix of signs of cofactors</u>: $ \begin{pmatrix} +  -  +  - \\ -  +  -  + \\  +  -  +  - \\  -  +  -  + \\ \end{pmatrix}; \text{where } C_{ij}=(-1)^{i+j}$
+<u>Matrix of signs of cofactors</u>: $ \begin{pmatrix}+ & - & + & - \\ - & + & - & + \\ + & - & + & - \\  - & + & - & + \\ \end{pmatrix}; \text{where } C_{ij}=(-1)^{i+j}$
 
 <u>Thm 5.5:</u> $det(I_n)=1$
 
@@ -456,7 +456,7 @@ If $ A $ is invertible, $det(A^{-1}) = \frac{1}{det(A)}$
 		b. $V$ is closed under *scalar* multiplication: 	If $c$ is a real scalar and $\vec{v}$ is in $V$, then so is $c\vec{v}$
 		c. There exists a zero vector $\vec{0}$ in $V$ s.t. $\vec{0}+\vec{v}=\vec{v}$ for all $\vec{v}$ in $V$
 		d. There exists an additive inverse $-\vec{v}$ in $V$ s.t. $\vec{-v}+\vec{v}=\vec{0}$ for all $\vec{v}$ in $V$
-		e. For all $\vec{v}_1, \vec{v}_2, \vec{v}_3$ in $V$:
+		e. $\forall \ \vec{v}_1, \vec{v}_2, \vec{v}_3 \ \in \ V$:
 				a. $\vec{v}_1 + \vec{v}_2 = \vec{v}_2 + \vec{v}_1$
 				b. $(\vec{v}_1 + \vec{v}_2) + \vec{v}_3 = \vec{v}_1 + (\vec{v}_2 + \vec{v}_3) $
 				c. $c_1(\vec{v}_1+\vec{v}_2) = c_1\vec{v}_1+c_1\vec{v}_2$
@@ -479,7 +479,7 @@ If $ A $ is invertible, $det(A^{-1}) = \frac{1}{det(A)}$
 
 ### 7.2 Span and Linear Independence
 
-<u>Definition:</u> Span of set $\{ \vec{v}_1, \vec{v}_2, ..., \vec{v}_m \}$ is set of all linear combinations of the form: $c_1\vec{v}_1+c_2\vec{v}_2+...+c_m\vec{v}_m$
+<u>Definition:</u> $\text{span}$ of set $\{ \vec{v}_1, \vec{v}_2, ..., \vec{v}_m \}$ is set of all linear combinations of the form: $c_1\vec{v}_1+c_2\vec{v}_2+...+c_m\vec{v}_m$
 
 <u>Thm 7.6:</u> Suppose that $\mathcal{V}$ is a subset of vector space $V$, and let $S = \text{span}(\vec{\mathcal{V}})$ then $S$ is a subspace of $\mathcal{V}$
 
@@ -504,16 +504,14 @@ If $ A $ is invertible, $det(A^{-1}) = \frac{1}{det(A)}$
 			b1. $\mathbb{P} \subseteq C(\R) \implies \text{dim } C(\R) = \infin$
 
 <u>How to</u>: check if a given set of polynomials, i.e. $\{x+1,x^2-1,x^2+x+1\}$, is a basis of $\mathbb{P}^2$?
-		
-
-a. Check linear independence: Assign a scalar $c_i$ to each polynomial; each column represents $c_i$, and each element in each *column* corresponds to a different degree of that polynomial, i.e. $x^2$
+		a. Check linear independence: Assign a scalar $c_i$ to each polynomial; each column represents $c_i$, and each element in each *column* corresponds to a different degree of that polynomial, i.e. $x^2$
 			$c_1(x+1)+c_2(x^2-1)+c_3(x^2+x+1)=\vec{0}$
 			$\implies (c_1-c_2+c_3)*1+(c_1+c_3)*x+(c_2+c_3)*x^2=0$
 			$\implies \begin{pmatrix} 1 & -1 & 1 \\ 1 & 0 & 1 \\ 0 & 1 & 1 \end{pmatrix} \begin{pmatrix}c_1\\c_2\\c_3\end{pmatrix} = \begin{pmatrix}0\\0\\0\end{pmatrix}$
 			a1. Check that determinant $\neq 0$ which would imply unique trivial solution, which implies linear independence
 		b. Could also check that they $\text{span } \mathbb{P}^2$
 			$\implies \begin{pmatrix} 1 & -1 & 1 \\ 1 & 0 & 1 \\ 0 & 1 & 1 \end{pmatrix} \begin{pmatrix}c_1\\c_2\\c_3\end{pmatrix} = \begin{pmatrix}a\\b\\c\end{pmatrix}$
-		c. Could also check matrix of derivatives: if there exists at least a single value of $x$ that makes $det(A) \neq 0$, $\implies$ linear indpendence.
+		c. Could also check matrix of derivatives: if there exists at least a single value of $x$ that makes $det(A) \neq 0$, $\implies$ linear independence.
 			$\begin{vmatrix} x+1& x^2-1 & x^2+x+1 \\ 1 & 2x & 2x+1 \\ 0 & 2 & 2 \end{vmatrix}$
 
 ### 7.3 Basis and Dimension
@@ -541,10 +539,10 @@ a. Check linear independence: Assign a scalar $c_i$ to each polynomial; each col
 
 <u>How to:</u> find $dim \text{ span}\{T_1,T_2,T_3\}$, given something like $T_1\vec{x}=\begin{pmatrix}x_1 + x_2 \\ 2x_1 \end{pmatrix}$, etc.?
 		a. Check linear independence of $T_1, T_2, T_3$ (Must hold $\forall\ x$ )
-			a1. Assign each $T_i$ a scalar $c_i$ which become its own columns; 
-				each element in that matrix has its own row on that particular column
-			b. Row reduce: if you get a free variable in a certain column, say $s_1$, then that column is a linear comination of the others
-		b. Check how many $T$s are needed to maintain linear independence, that is $dim \text{span}$
+			a1. Assign each $T_i$ a scalar $c_i$, each of which becomes its own column; 
+				each element in that matrix from $T_i$ has its own row on column $i$
+			a2. Row reduce: if you get a free variable in a certain column, say $s_1$, then the corresponding $T$ is a linear comination of the others
+		b. Check how many $T$s are needed to maintain linear independence, that is $dim\ \text{span}$
 
 
 ## Ch 8
@@ -681,7 +679,7 @@ a. Check linear independence: Assign a scalar $c_i$ to each polynomial; each col
 		e. Construct $D$ normally, construct $P$ using the corresponding orthonormal eigenvectors, and write inverse of $P$ as $P^T$. (Make sure to position eigenvectors s.t. $P$ is symmetrical)		
 
 <u>Thm 8.27:</u> If $A$ ~ real matrix, $\implies$ then $A^TA$ has nonnegative eigenvalues
-		Note: this works on $2x3$ matrices, for example
+		Note: this works on $2\text{x}3$ matrices, for example
 		$A^TA$ is always symmetric $\implies$ all the stuff from Ch 8 holds, plus the fact that the eigenvalues are nonnegative
 
 ## Ch 10
@@ -696,7 +694,7 @@ a. Check linear independence: Assign a scalar $c_i$ to each polynomial; each col
 
 ​	Dot product is an inner product on $\R^n$, it could also be "weighted" by some third param $t_i$ for every $u_i$ and $v_i$ in $\vec{u}\sdot\vec{v}$
 
-<u>Definition</u>: $\vec{u} and \vec{v}$ are orthogonal $\iff \langle \vec{u}, \vec{v} \rangle =0$
+<u>Definition</u>: $\vec{u} \text{ and }  \vec{v}$ are orthogonal $\iff \langle \vec{u}, \vec{v} \rangle =0$
 
 <u>Definition</u>: The norm of $\vec{v}$:   $||\vec{v}||=\sqrt{\langle \vec{v}, \vec{v} \rangle}$
 		a. Distance between vectors: $||\vec{u}-\vec{v}||$
@@ -718,20 +716,12 @@ a. Check linear independence: Assign a scalar $c_i$ to each polynomial; each col
 
 ### 10.2 Gram-Schmidt Revisted
 
-<u>Definition:</u> Vectors $ \{  \vec{v}_1, \dots, \vec{v)_k  \} $ in an inner product space $V$ form an orthogonal set if $ \langle \vec{v}_i, \vec{v}_j \rangle = 0 $ for $i \neq j$
+<u>Definition:</u> Vectors  $\{ \vec{v}_1 , \dots, \vec{v_2} \}$ in an inner product space $V$ form an orthogonal set if $ \langle \vec{v}_i, \vec{v}_j \rangle = 0 $ for $i \neq j$
 
-<u>Definition:</u> If $\mathcal{V} = \{ \vec{v}_1, \dots, \vec{v)_k \}$ is an orthogonal set of nonzero vectors in inner product space $V$, $\implies$ then $\mathcal{V}$ is linearly *in*dependent
+<u>Definition:</u> If $\mathcal{V} = \{ \vec{v}_1 , \dots, \vec{v_2} \}$ is an orthogonal set of nonzero vectors in inner product space $V$, $\implies$ then $\mathcal{V}$ is linearly *in*dependent
 
 <u>How to:</u>   find orthonormal basis of a given basis:
 		a. Do GS process to a new set of orthogonal basis vectors
 		b. Normalize each one by dividing by the norms
-
-<u>Definition:</u>
-
-<u>Definition:</u>
-
-<u>Definition:</u>
-
-<u>Definition:</u>
 
 
