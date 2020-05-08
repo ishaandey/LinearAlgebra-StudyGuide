@@ -20,8 +20,6 @@ $$
 <u>Thm:</u> Homogenous systems ALWAYS are consistent, aka they have either 1 or inf many solutions.
 This is b/c the trivial solution will always exist when $A\vec{x} = 0$
 
-
-
 ## Ch 2
 
 ### 2.1 Linear Combinations
@@ -36,17 +34,17 @@ This is b/c the trivial solution will always exist when $A\vec{x} = 0$
 
 <u>Definition</u> of $span\{\vec{u_1...u_m}\} $ is the set of ALL linear combinations 
 
-<u>How to</u>: See if some vector $\vec{v}$ is an element of $span\{u_1, u_2, ..., u_m\}$?
+<u>How to</u>: See if some vector $\vec{v}$ is an element of $span\{\vec{u_1...u_m}\} $?
 \> iff the linear system w/  $\vec{v}$ as the augment has a solution
 
 <u>Thm</u>: IF $\vec{u, v}$ are in $span\{\vec{u_1...u_m}\}$, THEN   $\vec{u+v}$  &  $a\vec{u}$  are in that span 
 (linear combinations of the vectors are in that span)
 
 <u>How to:</u> Find a vector $\vec{b}$ not in a given span of vectors?
-\> Set matrix equal (by augment) to some (a, b, c), and track what happens to it until matrix is row reduced.
-\> If the row is [ 0 0 0 | f(c) ], then any vector that has f(c) $\neq$ 0 is not in the span
+\> Set matrix equal (by augment) to some $(a, b, c)$, and track what happens to it until matrix is row reduced.
+\> If the row is $[ 0\ 0\ 0 | f(c) ]$, then any vector that has $f(c) \neq 0$ is not in the span
 
-<u>Thm:</u> ($span\{u_1...u_m\} = \mathbb{R} ^n$) $\iff$ (*B has a <u>pivot</u> in every <u>row</u>*)
+<u>Thm:</u> ($span\{u_1...u_m\} = \mathbb{R} ^n$) $\iff$ ($B$ has a <u>pivot</u> in every <u>row</u>)
 
 <u>How to:</u> check if a set of vectors span $\mathbb{R}^n$?
 \> Row reduce the matrix augmented with $[a\ b\ c]$
@@ -55,7 +53,7 @@ This is b/c the trivial solution will always exist when $A\vec{x} = 0$
 
 <u>How to</u>: Find what values of $h$ in a $n$ x $m$ matrix allow it to span $\mathbb{R} ^n$ ?
 	a. Row reduce the matrix, moving the $h$ down as needed to the last row.
-	b. The vectors in A span $\mathbb{R} ^n$ iff there is a trivial solution, which only occurs when $f(h) \neq 0$
+	b. The vectors in $ A$ span $\mathbb{R} ^n$ $\iff$ there is a trivial solution, which only occurs when $f(h) \neq 0$
 	c. The final answer should be all vectors with $\{h|h\neq27\}$ or something
 
 <u>How to:</u> find $span(\vec{\{a_1...a_m}\})$ (aka the columns of T)?
@@ -64,7 +62,7 @@ This is b/c the trivial solution will always exist when $A\vec{x} = 0$
 	a. IF $m < n$, THEN  the set does <u>not</u> span $\vec{R}^n$ (b/c theres no way to have a pivot in every row)
 	b. IF $m\geq n$, THEN the set could span $\vec{R}^n$ (depends on whether or not they are linearly independent)
 
-<u>Thm</u>:   $\vec{b}\ \epsilon\ span\{\vec{a_1...a_m}\}\ in\ \mathbb{R}^n$ $\iff$$A\vec{x}\ = \vec{b} $ has at least 1 solution
+<u>Thm</u>:   $\vec{b}\ \epsilon\ span\{\vec{a_1...a_m}\}\ \text{in}\ \mathbb{R}^n$ $\iff$$A\vec{x}\ = \vec{b} $ has at least 1 solution
 
 ### 2.3 Linear Independence
 
@@ -74,13 +72,13 @@ This is b/c the trivial solution will always exist when $A\vec{x} = 0$
 <u>How to:</u> Check if a system is linearly independent?
 	a. Set the sytem equal to $\vec{0}$, and row reduce. The only solution should be $\vec{x} = \vec{0}$ (which will happen when there is a pivot in every column)
 
-<u>Thm:</u>  (*m* vectors in  $\vec{R}^n$ are linearly independent) $\implies$ ($m\leq n$)
+<u>Thm:</u>  ($m$ vectors in  $\mathbb{R}^n$ are linearly independent) $\implies$ ($m\leq n$)
 	(b/c you can't have pivots in every column if there are too many columns)
 	(in other words, there are more variables than equations in the system)
 
-<u>Thm:</u> For a given set of *m* vectors in  $\mathbb{R}^n$:
-	a.   ( $span\{u_1...u_m\} = \mathbb{R}^n$ ) $\iff$ (*B has a pivot in every <u>row</u>*)
-	b.  ( $\{u_1...u_m\}$ are linearly independent ) $\iff$ (*B has a pivot in every <u>column</u>*)
+<u>Thm:</u> For a given set of $m$ vectors in  $\mathbb{R}^n$:
+	a.   ( $span\{u_1...u_m\} = \mathbb{R}^n$ ) $\iff$ ($B$ has a pivot in every <u>row</u>)
+	b.  ( $\{u_1...u_m\}$ are linearly independent ) $\iff$ ($B$ has a pivot in every <u>column</u>)
 
 <u>How to:</u> Check if one vector lies in the span of others in a set?
 	a. Row reduce the matrix augmented with $\vec{0}$
@@ -101,16 +99,16 @@ This is b/c the trivial solution will always exist when $A\vec{x} = 0$
 	a. $T\vec{(u+v)=A(u+v)\ \ =\ \ A(u)+A(v)=T(u)+T(v)}$
 	b. $T\vec{(}r\vec{u)=A(}r\vec{u)\ \ =}$  $r\vec{A(u)}=rT(\vec{u})$
 
-<u>Thm</u>: $T\vec{(x)=Ax}$ $\implies$ $T$ is a linear transformation, where $A$ is a $n x m$ matrix, and T goes from $\vec{R^m}$ to $\vec{R^n}$ 
+<u>Thm</u>: $T\vec{(x)=Ax}$ $\implies$ $T$ is a linear transformation, where $A$ is a $n x m$ matrix, and $T$ goes from $\vec{R^m}$ to $\vec{R^n}$ 
 
 <u>How to</u>: Check if a given transformation is linear:
 	a. Convert the system into a matrix A
-	b. Plug in the vectors $\begin{pmatrix}x_1\\x_2\end{pmatrix}$ for $\vec{u}$ and $\begin{pmatrix}y_1\\y_2\end{pmatrix}$ for $\vec{v}$  to prove the general case *true*
+	b. Plug in the vectors $\begin{pmatrix}x_1\\x_2\end{pmatrix}$ for $\vec{u}$ and $\begin{pmatrix}y_1\\y_2\end{pmatrix}$ for $\vec{v}$ to prove the general case *true*
 	c. Try the basis vectors $\begin{pmatrix}1\\0\end{pmatrix}$ and $\begin{pmatrix}0\\1\end{pmatrix}$ independently and check if the output fails to prove *false*
 
 <u>How to</u>: Find $range(T)$, where $\vec{T(x)=Ax}$  :
 	a. $range(T) = span(\{\vec{a_1...a_m}\})$ 
-	b. range is the set of linear combinations of the columns of A
+	b. range is the set of linear combinations of the columns of $A$
 
 <u>How to:</u> Check if a given vector $\vec{w}$ is in $range(\vec{T})$:
 	a. Make matrix of $\vec{[A\ |w]}$ and solve
@@ -118,13 +116,13 @@ This is b/c the trivial solution will always exist when $A\vec{x} = 0$
 ###### One-to-One vs Onto
 
 <u>Definition</u>: A transformation is *one-to-one* when there's at most one input that maps to an output
-<u>Definition</u>: A transformation is *onto* when no element in the codomain B is left out
+<u>Definition</u>: A transformation is *onto* when no element in the codomain $B$ is left out
 
-<u>Thm</u>: Given $T: \mathbb{R} ^m \rightarrow \mathbb{R} ^n$ and  $T\vec{(x)=Ax}$, where $\vec{B}$ is A in row-echelon form:
-	1a. (T is one-to-one) $\iff$ (columns of A are linearly *in*dependent) $\iff$ (B has a pivot in every column)
+<u>Thm</u>: Given $T: \mathbb{R} ^m \rightarrow \mathbb{R} ^n$ and  $T\vec{(x)=Ax}$, where $B$ is $A$ in row-echelon form:
+	1a. ($T$ is one-to-one) $\iff$ (columns of $A$ are linearly *in*dependent) $\iff$ ($B$ has a pivot in every column)
 	1b. $n < m \implies$ T is not one-to-one (aka if output space is smaller than input space)
 
-​	2a. (T is onto) $\iff$ (columns of A span the codomain $\mathbb{R}^n$ aka $range(T)=\mathbb{R}^n$) $\iff$ (B has a pivot in every row)
+​	2a. ($T$ is onto) $\iff$ (columns of $A$ span the codomain $\mathbb{R}^n$ aka $range(T)=\mathbb{R}^n$) $\iff$ ($B$ has a pivot in every row)
 ​	2b. $n > m \implies$ T is not onto (aka if output space is bigger than input space)
 
 ​	\> "No matrix that goes from bigger space to smaller space can be one-to-one"
@@ -137,6 +135,9 @@ This is b/c the trivial solution will always exist when $A\vec{x} = 0$
 
 <u>How to</u>: Shear to the right:
 	a.  $T_r(\vec{x}) = \begin{pmatrix}1&1\\0&1\end{pmatrix} \vec{x}$
+
+<u>How to:</u> Find the transformation for a parallelogram from a unit square:
+	a. $\vec{a_1}$ , or the first column of $A$ defines where the first basis vector, $\vec{i}$, lands;  same for $\vec{a_2}$
 
 ### 3.2 Matrix Algebra
 
