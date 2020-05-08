@@ -509,10 +509,10 @@ If $ A $ is invertible, $det(A^{-1}) = \frac{1}{det(A)}$
 a. Check linear independence: Assign a scalar $c_i$ to each polynomial; each column represents $c_i$, and each element in each *column* corresponds to a different degree of that polynomial, i.e. $x^2$
 			$c_1(x+1)+c_2(x^2-1)+c_3(x^2+x+1)=\vec{0}$
 			$\implies (c_1-c_2+c_3)*1+(c_1+c_3)*x+(c_2+c_3)*x^2=0$
-			$\implies \begin{pmatrix} 1\ -1\ 1 \\ 1 \ 0 \ 1 \\ 0 \ 1 \ 1 \end{pmatrix} \begin{pmatrix}c_1\\c_2\\c_3\end{pmatrix} = \begin{pmatrix}0\\0\\0\end{pmatrix}$
+			$\implies \begin{pmatrix} 1 & -1 & 1 \\ 1 & 0 & 1 \\ 0 & 1 & 1 \end{pmatrix} \begin{pmatrix}c_1\\c_2\\c_3\end{pmatrix} = \begin{pmatrix}0\\0\\0\end{pmatrix}$
 			a1. Check that determinant $\neq 0$ which would imply unique trivial solution, which implies linear independence
 		b. Could also check that they $\text{span } \mathbb{P}^2$
-			$\implies \begin{pmatrix} 1\ -1\ 1 \\ 1 \ 0 \ 1 \\ 0 \ 1 \ 1 \end{pmatrix} \begin{pmatrix}c_1\\c_2\\c_3\end{pmatrix} = \begin{pmatrix}a\\b\\c\end{pmatrix}$
+			$\implies \begin{pmatrix} 1 & -1 & 1 \\ 1 & 0 & 1 \\ 0 & 1 & 1 \end{pmatrix} \begin{pmatrix}c_1\\c_2\\c_3\end{pmatrix} = \begin{pmatrix}a\\b\\c\end{pmatrix}$
 		c. Could also check matrix of derivatives: if there exists at least a single value of $x$ that makes $det(A) \neq 0$, $\implies$ linear indpendence.
 			$\begin{vmatrix} x+1& x^2-1 & x^2+x+1 \\ 1 & 2x & 2x+1 \\ 0 & 2 & 2 \end{vmatrix}$
 
@@ -561,7 +561,7 @@ a. Check linear independence: Assign a scalar $c_i$ to each polynomial; each col
 		e. $ \vec{u}\sdot\vec{u}=0 \iff \vec{u}=\vec{0} $ 
 
 <u>Definition:</u> Norm or length of $ \vec{x} = ||\vec{x}|| = \sqrt{\vec{x}\sdot\vec{x}}$
-		$||c\vec{x}||=|c|\ ||\vec{x}||$
+		$\implies ||c\vec{x}||=|c|\ ||\vec{x}||$
 
 <u>Definition:</u> Unit vector in direction of $\vec{x}$:
 		$||\frac{\vec{x}}{||\vec{x}||}|| = 1$ 
@@ -577,6 +577,7 @@ a. Check linear independence: Assign a scalar $c_i$ to each polynomial; each col
 
 <u>Cauchy-Schwarz Inequality Thm 8.7:</u> 	 $|\vec{u}\sdot\vec{v}| \leq ||\vec{u}||\text{ }||\vec{v}||$
 		a. Define $cos(\theta)=\frac{\vec{u}\sdot\vec{v}}{||\vec{u}||\text{ }||\vec{v}||}$
+		b. $\implies  -||\vec{u}||\text{ }||\vec{v}|| \leq \vec{u}\sdot\vec{v} \leq ||\vec{u}||\text{ }||\vec{v}||$
 
 <u>Triangle Inequality Thm 8.8</u> 	$||\vec{u} + \vec{v}|| \leq ||\vec{u}||+||\vec{v}||$
 		a. This says that the line segment between two vectors is the shortest way between those two points 
@@ -584,7 +585,7 @@ a. Check linear independence: Assign a scalar $c_i$ to each polynomial; each col
 ######  Orthogonal Subspaces
 
 <u>Definition:</u> Vector $\vec{u}$ is orthogonal to subspace $S$ if $\vec{u}\sdot\vec{v}=0\ \forall \ \vec{s} \in S$. The set of all such vectors $ \vec{u}$ is called the orthogonal complement of $S$ and is denoted by $S^\bot$
-			$S^\bot=\{\vec{u}\ \in\ \R^n\ |\  \vec{u}\sdot\vec{s}=0\ \forall\ \vec{s} \in S$
+			$S^\bot=\{\vec{u}\ \in\ \R^n\ |\  \vec{u}\sdot\vec{s}=0\ \forall\ \vec{s} \in S \}$
 
 <u>Thm 8.10:</u> $S$ ~ subspace of $\R^n$ $\implies$ $S^\bot$ ~ subspace of $\R^n$ 
 
@@ -648,12 +649,12 @@ a. Check linear independence: Assign a scalar $c_i$ to each polynomial; each col
 			$\vec{w}_j = \frac{1}{||\vec{v}_j||}\vec{v}_j$ for $j=1,2,\dots,k$
 
 <u>How to:</u> Find a set of orthonormal basis vectors from a given set of basis vectors i.e. $\{\vec{u}_1, \vec{u}_2, \vec{u}_3\}$
-		a. Orthogonalize $\{\vec{u}_1, \vec{u}_2, \vec{u}_3\}$ using GS process to o
+		a. Orthogonalize $\{\vec{u}_1, \vec{u}_2, \vec{u}_3\}$ using GS process s
 		b. Normalize to obtain an orthonormal basis of $span\{\vec{u}_1, \vec{u}_2, \vec{u}_3\}$
 
 ### 8.3 Diagonalizing Symmetric Matrices
 
-<u>Thm 8.21</u> If $A$ ~ symmetric matrix, $\implies$ then the eigenvectors associated w/ distinct eigenvalues are orthogonal
+<u>Thm 8.21</u> If $A$ ~ symmetric matrix (when $A=A^T $) $\implies$ then the eigenvectors a	ssociated w/ distinct eigenvalues are orthogonal
 
 <u>Definition:</u> $P$ ~ square, $n\text{x}n$ with orthonormal columns is called an orthogonal matrix
 		\*Cols must be ortho*normal*, not just orthogonal
@@ -674,14 +675,14 @@ a. Check linear independence: Assign a scalar $c_i$ to each polynomial; each col
 
 <u>How to:</u> Orthogonally diagonalize a matrix A:
 		a. Get characteristic equation of $det(A-\lambda I_n)$, find eigenvalues
-		b. Find eigenvectors for each eigenvalue (these are all orthogonal to other eigenvectors, but may not be within the same eigenspace)
+		b. Find eigenvectors for each eigenvalue (these are already orthogonal to the other eigenvectors, but may not necessarily be orthogonal within the same eigenspace)
 		c. Apply Gram-Schmidt process to orthogonalize $\vec{u}_1, \vec{u}_2$ in a common eigenspace (do this step for every eigenspace)
-		d. Normalize the the orthogonal set of vectors (even the ones from $\text{dim }1$)
+		d. Normalize every orthogonal set of vectors (even the ones from $\text{dim }1$)
 		e. Construct $D$ normally, construct $P$ using the corresponding orthonormal eigenvectors, and write inverse of $P$ as $P^T$. (Make sure to position eigenvectors s.t. $P$ is symmetrical)		
 
 <u>Thm 8.27:</u> If $A$ ~ real matrix, $\implies$ then $A^TA$ has nonnegative eigenvalues
 		Note: this works on $2x3$ matrices, for example
-		$A^TA$ is always symmetric $\implies$ all the stuff from this 	chapter holds, plus the fact that the eigenvalues are nonnegative
+		$A^TA$ is always symmetric $\implies$ all the stuff from Ch 8 holds, plus the fact that the eigenvalues are nonnegative
 
 ## Ch 10
 
