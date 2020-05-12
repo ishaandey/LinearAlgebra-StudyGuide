@@ -62,7 +62,7 @@ This is b/c the trivial solution will always exist when $A\vec{x} = 0$
 	a. IF $m < n$, THEN  the set does <u>not</u> span $\vec{R}^n$ (b/c theres no way to have a pivot in every row)
 	b. IF $m\geq n$, THEN the set could span $\vec{R}^n$ (depends on whether or not they are linearly independent)
 
-<u>Thm</u>:   $\vec{b}\ \epsilon\ span\{\vec{a_1...a_m}\}\ \text{in}\ \mathbb{R}^n$ $\iff$$A\vec{x}\ = \vec{b} $ has at least 1 solution
+<u>Thm</u>:   $\vec{b}\ \in \ span\{\vec{a_1...a_m}\}\ \text{in}\ \mathbb{R}^n$ $\iff$$A\vec{x}\ = \vec{b} $ has at least 1 solution
 
 ### 2.3 Linear Independence
 
@@ -622,8 +622,9 @@ If $ A $ is invertible, $det(A^{-1}) = \frac{1}{det(A)}$
 		c. if $\vec{u}$ is in $\text{span}\{\vec{v}\}$, then $\text{proj}_v\vec{u} = \vec{u}$
 		d. $\text{proj}_v\vec{u}$ = $\text{proj}_{cv}\vec{u}$
 
-<u>Definition:</u> Let $S$ be a nonzero subspace w/ orthogonal basis $=\{\vec{v}_1,...,\vec{v}_k\}$ :
+<u>Definition:</u> Let $S$ be a nonzero subspace w/ orthogonasl basis $=\{\vec{v}_1,...,\vec{v}_k\}$. For some vector $\vec {u}$ :
 				$\text{proj}_s\vec{u} = \text{proj}_{\vec{v}_1}\vec{u}\ +\ ...\ +\ \text{proj}_{\vec{v}_k}\vec{u}$
+				$\implies$ if basis is not yet orthogonal, you MUST first orthogonalize it 
 
 <u>Thm 8.18:</u> For a projection on subspace when $S$ is nonzero:
 		a. $\text{proj}_s\vec{u}$ lies in $S$
