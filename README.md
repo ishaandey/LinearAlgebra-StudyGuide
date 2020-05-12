@@ -1,6 +1,6 @@
 # Linear Algebra Study Guide
-Study Guide for Linear Algebra with Applications, Jeffrey Holt 2nd Edition
+Study Guide for Linear Algebra with Applications, 2nd Edition by Jeffrey Holt
 
-Document is written with Typora in Markdown
+Written with Typora in markdown (See PDF for formatted document)
 
 Feel free to submit a PR for changes / new sections
