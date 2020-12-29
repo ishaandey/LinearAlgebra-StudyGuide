@@ -1,7 +1,19 @@
-# Linear Algebra Notes 
+---
+title: "Linear Algebra Notes"
+author: "Ishaan Dey"
+output: 
+  html_document:  
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    toc_collapse: true
+---
 
-### Ishaan Dey | Spring 2020
-##### MATH 3350 | Holt Linear Algebra 2nd Ed.
+Made by Ishaan Dey, Spring 2020
+
+Course: UVA MATH 3350 
+
+Textbook: Holt Linear Algebra 2nd Ed.
 
 $$
 \renewcommand{\vec}[1]{\mathbf{#1}}
